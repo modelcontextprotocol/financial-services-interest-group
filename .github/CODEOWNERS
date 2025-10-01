@@ -1,0 +1,5 @@
+# CODEOWNERS for MCP Financial Services Interest Group
+# These owners will be requested for review when someone opens a pull request.
+
+# Default owners for everything in the repo
+* @modelcontextprotocol/ig-financial-services
