@@ -69,8 +69,7 @@ Our initial work focuses on:
 ├── GOVERNANCE.md            # Governance model, roles, and members
 ├── CONTRIBUTING.md          # Contribution guidelines
 ├── extensions/              # MCP extension specifications and examples
-├── docs/                    # Guides, whitepapers, and documentation
-└── templates/               # Templates for extensions and SEPs
+└── docs/                    # Guides, whitepapers, and documentation
 ```
 
 ## 🤝 Contributing
