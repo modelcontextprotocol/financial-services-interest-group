@@ -29,7 +29,7 @@ The FSIG coordinates financial-industry stakeholders to:
 **Format:** Virtual  
 **Zoom Link:** [Join FSIG Bi-weekly Meeting](https://bloomberg.zoom.us/j/94297371315?pwd=v3WLhJrPEafnbZUFUMg7R19qsAYlMJ.1)
 
-> **Note:** See the [agenda doc](https://docs.google.com/document/d/18lj9jcdNnr4m9d1RovotEko5LTP_9vsRTuZdfg0Igmw/edit?tab=t.0) for accurate next meeting times.
+> **Note:** See the [agenda doc](hhttps://docs.google.com/document/d/19HwCw7i4k-omABGnRYGGuLdMJNXQc3rs_QRgJxPhQU8/edit?tab=t.0) for accurate next meeting times.
 
 All meetings include:
 - Brief [antitrust reminder](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/ANTITRUST.md) at start
@@ -37,7 +37,7 @@ All meetings include:
 - Public notes with decisions and action items
 - Open attendance for all interested participants
 
-**Meeting Notes & Agendas:** [FSIG Meeting Notes](https://docs.google.com/document/d/18lj9jcdNnr4m9d1RovotEko5LTP_9vsRTuZdfg0Igmw/edit?tab=t.0)
+**Meeting Notes & Agendas:** [FSIG Meeting Notes](https://docs.google.com/document/d/19HwCw7i4k-omABGnRYGGuLdMJNXQc3rs_QRgJxPhQU8/edit?tab=t.0)
 
 ## 👥 How to Participate
 

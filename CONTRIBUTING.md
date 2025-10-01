@@ -7,7 +7,7 @@ Thank you for your interest in contributing to the MCP Financial Services Intere
 1. **Join the Community**
    - Join the `#financial-services-ig` channel on [MCP Discord](https://discord.com/invite/6CSzBmMkjX)
    - Introduce yourself and your interests
-   - Review recent [meeting notes](https://docs.google.com/document/d/18lj9jcdNnr4m9d1RovotEko5LTP_9vsRTuZdfg0Igmw/edit?tab=t.0)
+   - Review recent [meeting notes](https://docs.google.com/document/d/19HwCw7i4k-omABGnRYGGuLdMJNXQc3rs_QRgJxPhQU8/edit?tab=t.0)
 
 2. **Understand the Scope**
    - Read the [README](./README.md) for an overview

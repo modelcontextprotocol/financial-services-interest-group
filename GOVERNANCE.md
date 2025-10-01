@@ -121,7 +121,7 @@ All FSIG meetings must include:
 3. **Public Notes** — Meeting notes with decisions and action items published after each meeting
 4. **Open Attendance** — All interested participants welcome, no approval required
 
-Meeting notes are maintained in a [shared Google Doc](https://docs.google.com/document/d/18lj9jcdNnr4m9d1RovotEko5LTP_9vsRTuZdfg0Igmw/edit?tab=t.0).
+Meeting notes are maintained in a [shared Google Doc](https://docs.google.com/document/d/19HwCw7i4k-omABGnRYGGuLdMJNXQc3rs_QRgJxPhQU8/edit?tab=t.0).
 
 ## Antitrust Compliance
 
