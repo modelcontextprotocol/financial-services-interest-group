@@ -94,6 +94,7 @@ Maintainers have review/merge permissions on the repository and voting rights on
 | Name | Organization | GitHub |
 |------|-------------|---------|
 | Sambhav Kothari | Bloomberg | [@sambhav](https://github.com/sambhav) |
+| Peder Holdgaard Pedersen  | Saxo Bank | [@pederhp](https://github.com/pederhp) |
 
 ### Active Contributors
 
