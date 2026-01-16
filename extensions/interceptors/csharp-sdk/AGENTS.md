@@ -154,6 +154,8 @@ Refer to SEP-1763 for full specification. Areas that may need work:
 
 ## Target Frameworks
 
+- .NET 10.0 (primary)
+- .NET 9.0
 - .NET 8.0
 - .NET Standard 2.0 (for broader compatibility)
 
