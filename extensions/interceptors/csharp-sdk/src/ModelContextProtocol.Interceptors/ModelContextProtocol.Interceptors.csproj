@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net9.0;net8.0;netstandard2.0</TargetFrameworks>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <IsPackable>true</IsPackable>
+    <PackageId>ModelContextProtocol.Interceptors</PackageId>
+    <Description>MCP Interceptors extension for the Model Context Protocol (MCP) .NET SDK - provides validation, mutation, and observation capabilities for MCP messages.</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    
+    <!-- Package metadata -->
+    <Authors>FSIG Contributors</Authors>
+    <Copyright>© FSIG Contributors</Copyright>
+    <PackageTags>ModelContextProtocol;mcp;ai;llm;interceptors;validation</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/anthropics/financial-services-interest-group</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)' != 'netstandard2.0'">
+    <IsAotCompatible>true</IsAotCompatible>
+  </PropertyGroup>
+
+  <!-- Include polyfills for netstandard2.0 -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <Compile Include="..\Common\Polyfills\System\Runtime\CompilerServices\IsExternalInit.cs" Link="Polyfills\IsExternalInit.cs" />
+    <Compile Include="..\Common\Polyfills\System\Runtime\CompilerServices\RequiredMemberAttribute.cs" Link="Polyfills\RequiredMemberAttribute.cs" />
+    <Compile Include="..\Common\Polyfills\System\Runtime\CompilerServices\CompilerFeatureRequiredAttribute.cs" Link="Polyfills\CompilerFeatureRequiredAttribute.cs" />
+    <Compile Include="..\Common\Polyfills\System\Diagnostics\CodeAnalysis\SetsRequiredMembersAttribute.cs" Link="Polyfills\SetsRequiredMembersAttribute.cs" />
+    <Compile Include="..\Common\Polyfills\System\Diagnostics\CodeAnalysis\DynamicallyAccessedMembersAttribute.cs" Link="Polyfills\DynamicallyAccessedMembersAttribute.cs" />
+    <Compile Include="..\Common\Polyfills\System\Diagnostics\CodeAnalysis\DynamicallyAccessedMemberTypes.cs" Link="Polyfills\DynamicallyAccessedMemberTypes.cs" />
+    <Compile Include="..\Common\Polyfills\System\Diagnostics\CodeAnalysis\RequiresUnreferencedCode.cs" Link="Polyfills\RequiresUnreferencedCode.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Reference the MCP SDK NuGet package -->
+    <PackageReference Include="ModelContextProtocol" Version="0.6.0-preview.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>

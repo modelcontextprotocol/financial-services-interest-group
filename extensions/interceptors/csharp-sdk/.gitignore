@@ -1,0 +1,31 @@
+# Build results
+[Bb]in/
+[Oo]bj/
+artifacts/
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+
+# IDE
+.vs/
+.vscode/
+*.suo
+*.user
+*.sln.docstates
+.idea/
+*.swp
+
+# Build
+*.log
+msbuild*.binlog
+
+# Test results
+TestResults/
+coverage/
+
+# OS
+.DS_Store
+Thumbs.db
