@@ -1,5 +1,5 @@
 using Microsoft.Extensions.DependencyInjection;
-using ModelContextProtocol.Server;
+using ModelContextProtocol.Client;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Reflection;
@@ -7,23 +7,23 @@ using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Text.RegularExpressions;
 
-namespace ModelContextProtocol.Interceptors.Server;
+namespace ModelContextProtocol.Interceptors.Client;
 
-/// <summary>Provides an <see cref="McpServerInterceptor"/> that's implemented via reflection.</summary>
-internal sealed partial class ReflectionMcpServerInterceptor : McpServerInterceptor
+/// <summary>Provides an <see cref="McpClientInterceptor"/> that's implemented via reflection.</summary>
+internal sealed partial class ReflectionMcpClientInterceptor : McpClientInterceptor
 {
     private readonly MethodInfo _method;
     private readonly object? _target;
-    private readonly Func<RequestContext<InvokeInterceptorRequestParams>, object>? _createTargetFunc;
+    private readonly Func<ClientInterceptorContext<InvokeInterceptorRequestParams>, object>? _createTargetFunc;
     private readonly IReadOnlyList<object> _metadata;
     private readonly JsonSerializerOptions _serializerOptions;
 
     /// <summary>
-    /// Creates an <see cref="McpServerInterceptor"/> instance for a method, specified via a <see cref="Delegate"/> instance.
+    /// Creates an <see cref="McpClientInterceptor"/> instance for a method, specified via a <see cref="Delegate"/> instance.
     /// </summary>
-    public static new ReflectionMcpServerInterceptor Create(
+    public static new ReflectionMcpClientInterceptor Create(
         Delegate method,
-        McpServerInterceptorCreateOptions? options)
+        McpClientInterceptorCreateOptions? options)
     {
         if (method is null)
         {
@@ -32,16 +32,16 @@ internal sealed partial class ReflectionMcpServerInterceptor : McpServerIntercep
 
         options = DeriveOptions(method.Method, options);
 
-        return new ReflectionMcpServerInterceptor(method.Method, method.Target, null, options);
+        return new ReflectionMcpClientInterceptor(method.Method, method.Target, null, options);
     }
 
     /// <summary>
-    /// Creates an <see cref="McpServerInterceptor"/> instance for a method, specified via a <see cref="MethodInfo"/> instance.
+    /// Creates an <see cref="McpClientInterceptor"/> instance for a method, specified via a <see cref="MethodInfo"/> instance.
     /// </summary>
-    public static new ReflectionMcpServerInterceptor Create(
+    public static new ReflectionMcpClientInterceptor Create(
         MethodInfo method,
         object? target,
-        McpServerInterceptorCreateOptions? options)
+        McpClientInterceptorCreateOptions? options)
     {
         if (method is null)
         {
@@ -50,16 +50,16 @@ internal sealed partial class ReflectionMcpServerInterceptor : McpServerIntercep
 
         options = DeriveOptions(method, options);
 
-        return new ReflectionMcpServerInterceptor(method, target, null, options);
+        return new ReflectionMcpClientInterceptor(method, target, null, options);
     }
 
     /// <summary>
-    /// Creates an <see cref="McpServerInterceptor"/> instance for a method, specified via a <see cref="MethodInfo"/> instance.
+    /// Creates an <see cref="McpClientInterceptor"/> instance for a method, specified via a <see cref="MethodInfo"/> instance.
     /// </summary>
-    public static new ReflectionMcpServerInterceptor Create(
+    public static new ReflectionMcpClientInterceptor Create(
         MethodInfo method,
-        Func<RequestContext<InvokeInterceptorRequestParams>, object> createTargetFunc,
-        McpServerInterceptorCreateOptions? options)
+        Func<ClientInterceptorContext<InvokeInterceptorRequestParams>, object> createTargetFunc,
+        McpClientInterceptorCreateOptions? options)
     {
         if (method is null)
         {
@@ -73,19 +73,20 @@ internal sealed partial class ReflectionMcpServerInterceptor : McpServerIntercep
 
         options = DeriveOptions(method, options);
 
-        return new ReflectionMcpServerInterceptor(method, null, createTargetFunc, options);
+        return new ReflectionMcpClientInterceptor(method, null, createTargetFunc, options);
     }
 
-    private static McpServerInterceptorCreateOptions DeriveOptions(MethodInfo method, McpServerInterceptorCreateOptions? options)
+    private static McpClientInterceptorCreateOptions DeriveOptions(MethodInfo method, McpClientInterceptorCreateOptions? options)
     {
-        McpServerInterceptorCreateOptions newOptions = options?.Clone() ?? new();
+        McpClientInterceptorCreateOptions newOptions = options?.Clone() ?? new();
 
-        if (method.GetCustomAttribute<McpServerInterceptorAttribute>() is { } interceptorAttr)
+        if (method.GetCustomAttribute<McpClientInterceptorAttribute>() is { } interceptorAttr)
         {
             newOptions.Name ??= interceptorAttr.Name;
             newOptions.Version ??= interceptorAttr.Version;
             newOptions.Description ??= interceptorAttr.Description;
             newOptions.Events ??= interceptorAttr.Events.Length > 0 ? interceptorAttr.Events : null;
+            newOptions.Type ??= interceptorAttr.Type;
             newOptions.Phase ??= interceptorAttr.Phase;
 
             if (interceptorAttr.PriorityHint != 0)
@@ -105,12 +106,12 @@ internal sealed partial class ReflectionMcpServerInterceptor : McpServerIntercep
         return newOptions;
     }
 
-    /// <summary>Initializes a new instance of the <see cref="ReflectionMcpServerInterceptor"/> class.</summary>
-    private ReflectionMcpServerInterceptor(
+    /// <summary>Initializes a new instance of the <see cref="ReflectionMcpClientInterceptor"/> class.</summary>
+    private ReflectionMcpClientInterceptor(
         MethodInfo method,
         object? target,
-        Func<RequestContext<InvokeInterceptorRequestParams>, object>? createTargetFunc,
-        McpServerInterceptorCreateOptions? options)
+        Func<ClientInterceptorContext<InvokeInterceptorRequestParams>, object>? createTargetFunc,
+        McpClientInterceptorCreateOptions? options)
     {
         _method = method;
         _target = target;
@@ -127,12 +128,11 @@ internal sealed partial class ReflectionMcpServerInterceptor : McpServerIntercep
             Version = options?.Version,
             Description = options?.Description,
             Events = options?.Events?.ToList() ?? [],
-            Type = InterceptorType.Validation, // PoC: Always validation type
+            Type = options?.Type ?? InterceptorType.Validation,
             Phase = options?.Phase ?? InterceptorPhase.Request,
             PriorityHint = options?.PriorityHint,
             ConfigSchema = options?.ConfigSchema,
             Meta = options?.Meta,
-            McpServerInterceptor = this,
         };
     }
 
@@ -143,13 +143,13 @@ internal sealed partial class ReflectionMcpServerInterceptor : McpServerIntercep
     public override IReadOnlyList<object> Metadata => _metadata;
 
     /// <inheritdoc />
-    public override async ValueTask<ValidationInterceptorResult> InvokeAsync(
-        RequestContext<InvokeInterceptorRequestParams> request,
+    public override async ValueTask<InterceptorResult> InvokeAsync(
+        ClientInterceptorContext<InvokeInterceptorRequestParams> context,
         CancellationToken cancellationToken = default)
     {
-        if (request is null)
+        if (context is null)
         {
-            throw new ArgumentNullException(nameof(request));
+            throw new ArgumentNullException(nameof(context));
         }
 
         cancellationToken.ThrowIfCancellationRequested();
@@ -159,12 +159,12 @@ internal sealed partial class ReflectionMcpServerInterceptor : McpServerIntercep
         try
         {
             // Resolve target instance
-            object? targetInstance = _target ?? _createTargetFunc?.Invoke(request);
+            object? targetInstance = _target ?? _createTargetFunc?.Invoke(context);
 
             try
             {
                 // Bind parameters
-                object?[] args = BindParameters(request, cancellationToken);
+                object?[] args = BindParameters(context, cancellationToken);
 
                 // Invoke the method
                 object? result = _method.Invoke(targetInstance, args);
@@ -172,8 +172,8 @@ internal sealed partial class ReflectionMcpServerInterceptor : McpServerIntercep
                 // Handle async methods
                 result = await HandleAsyncResult(result).ConfigureAwait(false);
 
-                // Convert result to ValidationInterceptorResult
-                return ConvertToResult(result, stopwatch.ElapsedMilliseconds);
+                // Convert result to appropriate InterceptorResult
+                return ConvertToResult(result, stopwatch.ElapsedMilliseconds, context.Params?.Phase ?? ProtocolInterceptor.Phase);
             }
             finally
             {
@@ -193,31 +193,47 @@ internal sealed partial class ReflectionMcpServerInterceptor : McpServerIntercep
         }
         catch (TargetInvocationException ex) when (ex.InnerException is not null)
         {
-            return new ValidationInterceptorResult
-            {
-                Interceptor = ProtocolInterceptor.Name,
-                Phase = request.Params?.Phase ?? ProtocolInterceptor.Phase,
-                DurationMs = stopwatch.ElapsedMilliseconds,
-                Valid = false,
-                Severity = ValidationSeverity.Error,
-                Messages = [new() { Message = ex.InnerException.Message, Severity = ValidationSeverity.Error }]
-            };
+            return CreateErrorResult(ex.InnerException.Message, stopwatch.ElapsedMilliseconds, context.Params?.Phase ?? ProtocolInterceptor.Phase);
         }
         catch (Exception ex)
         {
-            return new ValidationInterceptorResult
-            {
-                Interceptor = ProtocolInterceptor.Name,
-                Phase = request.Params?.Phase ?? ProtocolInterceptor.Phase,
-                DurationMs = stopwatch.ElapsedMilliseconds,
-                Valid = false,
-                Severity = ValidationSeverity.Error,
-                Messages = [new() { Message = ex.Message, Severity = ValidationSeverity.Error }]
-            };
+            return CreateErrorResult(ex.Message, stopwatch.ElapsedMilliseconds, context.Params?.Phase ?? ProtocolInterceptor.Phase);
         }
     }
 
-    private object?[] BindParameters(RequestContext<InvokeInterceptorRequestParams> request, CancellationToken cancellationToken)
+    private InterceptorResult CreateErrorResult(string message, long durationMs, InterceptorPhase phase)
+    {
+        return ProtocolInterceptor.Type switch
+        {
+            InterceptorType.Mutation => new MutationInterceptorResult
+            {
+                Interceptor = ProtocolInterceptor.Name,
+                Phase = phase,
+                DurationMs = durationMs,
+                Modified = false,
+                Info = new JsonObject { ["error"] = message }
+            },
+            InterceptorType.Observability => new ObservabilityInterceptorResult
+            {
+                Interceptor = ProtocolInterceptor.Name,
+                Phase = phase,
+                DurationMs = durationMs,
+                Observed = false,
+                Info = new JsonObject { ["error"] = message }
+            },
+            _ => new ValidationInterceptorResult
+            {
+                Interceptor = ProtocolInterceptor.Name,
+                Phase = phase,
+                DurationMs = durationMs,
+                Valid = false,
+                Severity = ValidationSeverity.Error,
+                Messages = [new() { Message = message, Severity = ValidationSeverity.Error }]
+            }
+        };
+    }
+
+    private object?[] BindParameters(ClientInterceptorContext<InvokeInterceptorRequestParams> context, CancellationToken cancellationToken)
     {
         var parameters = _method.GetParameters();
         var args = new object?[parameters.Length];
@@ -225,13 +241,13 @@ internal sealed partial class ReflectionMcpServerInterceptor : McpServerIntercep
         for (int i = 0; i < parameters.Length; i++)
         {
             var param = parameters[i];
-            args[i] = BindParameter(param, request, cancellationToken);
+            args[i] = BindParameter(param, context, cancellationToken);
         }
 
         return args;
     }
 
-    private object? BindParameter(ParameterInfo param, RequestContext<InvokeInterceptorRequestParams> request, CancellationToken cancellationToken)
+    private object? BindParameter(ParameterInfo param, ClientInterceptorContext<InvokeInterceptorRequestParams> context, CancellationToken cancellationToken)
     {
         var paramType = param.ParameterType;
         var paramName = param.Name?.ToLowerInvariant();
@@ -245,49 +261,49 @@ internal sealed partial class ReflectionMcpServerInterceptor : McpServerIntercep
         // Bind IServiceProvider
         if (paramType == typeof(IServiceProvider))
         {
-            return request.Services;
+            return context.Services;
         }
 
-        // Bind McpServer
-        if (typeof(McpServer).IsAssignableFrom(paramType))
+        // Bind McpClient
+        if (typeof(McpClient).IsAssignableFrom(paramType))
         {
-            return request.Server;
+            return context.Client;
         }
 
         // Bind payload
         if (paramType == typeof(JsonNode) && paramName is "payload")
         {
-            return request.Params?.Payload;
+            return context.Params?.Payload;
         }
 
         // Bind config
         if (paramType == typeof(JsonNode) && paramName is "config")
         {
-            return request.Params?.Config;
+            return context.Params?.Config;
         }
 
         // Bind context
         if (paramType == typeof(InvokeInterceptorContext))
         {
-            return request.Params?.Context;
+            return context.Params?.Context;
         }
 
         // Bind event
         if (paramType == typeof(string) && paramName is "event")
         {
-            return request.Params?.Event;
+            return context.Params?.Event;
         }
 
         // Bind phase
         if (paramType == typeof(InterceptorPhase) && paramName is "phase")
         {
-            return request.Params?.Phase ?? ProtocolInterceptor.Phase;
+            return context.Params?.Phase ?? ProtocolInterceptor.Phase;
         }
 
         // Try to resolve from DI
-        if (request.Services is not null)
+        if (context.Services is not null)
         {
-            var service = request.Services.GetService(paramType);
+            var service = context.Services.GetService(paramType);
             if (service is not null)
             {
                 return service;
@@ -324,16 +340,35 @@ internal sealed partial class ReflectionMcpServerInterceptor : McpServerIntercep
             return null;
         }
 
-        // Handle ValueTask<ValidationInterceptorResult>
-        if (result is ValueTask<ValidationInterceptorResult> valueTaskResult)
+        // Handle ValueTask<T> for various result types
+        if (result is ValueTask<ValidationInterceptorResult> valueTaskValidation)
+        {
+            return await valueTaskValidation.ConfigureAwait(false);
+        }
+
+        if (result is ValueTask<MutationInterceptorResult> valueTaskMutation)
+        {
+            return await valueTaskMutation.ConfigureAwait(false);
+        }
+
+        if (result is ValueTask<ObservabilityInterceptorResult> valueTaskObservability)
+        {
+            return await valueTaskObservability.ConfigureAwait(false);
+        }
+
+        if (result is ValueTask<InterceptorResult> valueTaskResult)
         {
             return await valueTaskResult.ConfigureAwait(false);
         }
 
-        // Handle ValueTask<bool>
         if (result is ValueTask<bool> valueTaskBool)
         {
             return await valueTaskBool.ConfigureAwait(false);
+        }
+
+        if (result is ValueTask<JsonNode?> valueTaskPayload)
+        {
+            return await valueTaskPayload.ConfigureAwait(false);
         }
 
         return result;
@@ -341,9 +376,22 @@ internal sealed partial class ReflectionMcpServerInterceptor : McpServerIntercep
 
     private static object? GetTaskResult(Task task)
     {
-        // Use dynamic to avoid reflection issues with trimming
-        // For Task<T> types, we need to get the Result
-        if (task is Task<ValidationInterceptorResult> taskResult)
+        if (task is Task<ValidationInterceptorResult> taskValidation)
+        {
+            return taskValidation.Result;
+        }
+
+        if (task is Task<MutationInterceptorResult> taskMutation)
+        {
+            return taskMutation.Result;
+        }
+
+        if (task is Task<ObservabilityInterceptorResult> taskObservability)
+        {
+            return taskObservability.Result;
+        }
+
+        if (task is Task<InterceptorResult> taskResult)
         {
             return taskResult.Result;
         }
@@ -353,38 +401,78 @@ internal sealed partial class ReflectionMcpServerInterceptor : McpServerIntercep
             return taskBool.Result;
         }
 
-        // For non-generic Task, there's no result
+        if (task is Task<JsonNode?> taskPayload)
+        {
+            return taskPayload.Result;
+        }
+
         return null;
     }
 
-    private ValidationInterceptorResult ConvertToResult(object? result, long durationMs)
+    private InterceptorResult ConvertToResult(object? result, long durationMs, InterceptorPhase phase)
     {
-        if (result is ValidationInterceptorResult validationResult)
+        // Already an InterceptorResult
+        if (result is InterceptorResult interceptorResult)
         {
-            validationResult.Interceptor ??= ProtocolInterceptor.Name;
-            validationResult.DurationMs = durationMs;
-            return validationResult;
+            interceptorResult.Interceptor ??= ProtocolInterceptor.Name;
+            interceptorResult.DurationMs = durationMs;
+            if (interceptorResult.Phase == default)
+            {
+                interceptorResult.Phase = phase;
+            }
+            return interceptorResult;
         }
 
-        if (result is bool isValid)
+        // Handle bool for validation
+        if (result is bool isValid && ProtocolInterceptor.Type == InterceptorType.Validation)
         {
             return new ValidationInterceptorResult
             {
                 Interceptor = ProtocolInterceptor.Name,
-                Phase = ProtocolInterceptor.Phase,
+                Phase = phase,
                 DurationMs = durationMs,
                 Valid = isValid,
                 Severity = isValid ? null : ValidationSeverity.Error,
             };
         }
 
-        // Default to valid if no result
-        return new ValidationInterceptorResult
+        // Handle JsonNode for mutation
+        if (result is JsonNode payload && ProtocolInterceptor.Type == InterceptorType.Mutation)
         {
-            Interceptor = ProtocolInterceptor.Name,
-            Phase = ProtocolInterceptor.Phase,
-            DurationMs = durationMs,
-            Valid = true,
+            return new MutationInterceptorResult
+            {
+                Interceptor = ProtocolInterceptor.Name,
+                Phase = phase,
+                DurationMs = durationMs,
+                Modified = true,
+                Payload = payload
+            };
+        }
+
+        // Default based on interceptor type
+        return ProtocolInterceptor.Type switch
+        {
+            InterceptorType.Mutation => new MutationInterceptorResult
+            {
+                Interceptor = ProtocolInterceptor.Name,
+                Phase = phase,
+                DurationMs = durationMs,
+                Modified = false
+            },
+            InterceptorType.Observability => new ObservabilityInterceptorResult
+            {
+                Interceptor = ProtocolInterceptor.Name,
+                Phase = phase,
+                DurationMs = durationMs,
+                Observed = true
+            },
+            _ => new ValidationInterceptorResult
+            {
+                Interceptor = ProtocolInterceptor.Name,
+                Phase = phase,
+                DurationMs = durationMs,
+                Valid = true
+            }
         };
     }
 

@@ -2,6 +2,7 @@ using System.Diagnostics;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
+using ModelContextProtocol.Interceptors.Client;
 using ModelContextProtocol.Interceptors.Server;
 
 namespace ModelContextProtocol.Interceptors;
@@ -101,10 +102,16 @@ public sealed class Interceptor
     public JsonObject? Meta { get; set; }
 
     /// <summary>
-    /// Gets or sets the callable server interceptor corresponding to this metadata if any.
+    /// Gets or sets the callable server interceptor corresponding to this metadata, if any.
     /// </summary>
     [JsonIgnore]
     public McpServerInterceptor? McpServerInterceptor { get; set; }
+
+    /// <summary>
+    /// Gets or sets the callable client interceptor corresponding to this metadata, if any.
+    /// </summary>
+    [JsonIgnore]
+    public McpClientInterceptor? McpClientInterceptor { get; set; }
 
     [DebuggerBrowsable(DebuggerBrowsableState.Never)]
     private string DebuggerDisplay

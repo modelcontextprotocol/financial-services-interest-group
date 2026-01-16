@@ -1,4 +1,3 @@
-using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace ModelContextProtocol.Interceptors;
@@ -6,37 +5,19 @@ namespace ModelContextProtocol.Interceptors;
 /// <summary>
 /// Represents the result of invoking a validation interceptor.
 /// </summary>
-public sealed class ValidationInterceptorResult
+/// <remarks>
+/// <para>
+/// Validation interceptors validate messages and can block execution if validation fails
+/// with <see cref="ValidationSeverity.Error"/>. Info and Warning severities do not block.
+/// </para>
+/// </remarks>
+public sealed class ValidationInterceptorResult : InterceptorResult
 {
     /// <summary>
-    /// Gets or sets the name of the interceptor that produced this result.
-    /// </summary>
-    [JsonPropertyName("interceptor")]
-    public string? Interceptor { get; set; }
-
-    /// <summary>
-    /// Gets or sets the type of interceptor (always "validation" for this result type).
+    /// Gets the type of interceptor (always "validation" for this result type).
     /// </summary>
     [JsonPropertyName("type")]
-    public InterceptorType Type { get; set; } = InterceptorType.Validation;
-
-    /// <summary>
-    /// Gets or sets the phase when this interceptor executed.
-    /// </summary>
-    [JsonPropertyName("phase")]
-    public InterceptorPhase Phase { get; set; }
-
-    /// <summary>
-    /// Gets or sets the execution duration in milliseconds.
-    /// </summary>
-    [JsonPropertyName("durationMs")]
-    public long? DurationMs { get; set; }
-
-    /// <summary>
-    /// Gets or sets additional interceptor-specific information.
-    /// </summary>
-    [JsonPropertyName("info")]
-    public JsonObject? Info { get; set; }
+    public override InterceptorType Type => InterceptorType.Validation;
 
     /// <summary>
     /// Gets or sets whether the validation passed.
@@ -73,6 +54,38 @@ public sealed class ValidationInterceptorResult
     /// </remarks>
     [JsonPropertyName("signature")]
     public ValidationSignature? Signature { get; set; }
+
+    /// <summary>
+    /// Creates a validation result indicating success.
+    /// </summary>
+    /// <returns>A validation result with <see cref="Valid"/> set to true.</returns>
+    public static ValidationInterceptorResult Success() => new() { Valid = true };
+
+    /// <summary>
+    /// Creates a validation result indicating failure with an error message.
+    /// </summary>
+    /// <param name="message">The error message.</param>
+    /// <param name="path">Optional path to the invalid field.</param>
+    /// <returns>A validation result with <see cref="Valid"/> set to false and error severity.</returns>
+    public static ValidationInterceptorResult Error(string message, string? path = null) => new()
+    {
+        Valid = false,
+        Severity = ValidationSeverity.Error,
+        Messages = [new() { Message = message, Severity = ValidationSeverity.Error, Path = path }]
+    };
+
+    /// <summary>
+    /// Creates a validation result with a warning that does not block execution.
+    /// </summary>
+    /// <param name="message">The warning message.</param>
+    /// <param name="path">Optional path to the field with the warning.</param>
+    /// <returns>A validation result with <see cref="Valid"/> set to true and warning severity.</returns>
+    public static ValidationInterceptorResult Warning(string message, string? path = null) => new()
+    {
+        Valid = true,
+        Severity = ValidationSeverity.Warn,
+        Messages = [new() { Message = message, Severity = ValidationSeverity.Warn, Path = path }]
+    };
 }
 
 /// <summary>
