@@ -1,6 +1,7 @@
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Text.Json.Serialization.Metadata;
+using ModelContextProtocol.Interceptors.Protocol.Llm;
 using ModelContextProtocol.Protocol;
 
 namespace ModelContextProtocol.Interceptors;
@@ -284,6 +285,70 @@ internal static class PayloadConverter
         }
 
         return node.Deserialize<ListToolsResult>(DefaultOptions);
+    }
+
+    #endregion
+
+    #region LLM Completion Conversion
+
+    /// <summary>
+    /// Converts an <see cref="LlmCompletionRequest"/> to a <see cref="JsonNode"/>.
+    /// </summary>
+    /// <param name="request">The LLM completion request.</param>
+    /// <returns>A JSON representation of the request.</returns>
+    public static JsonNode? ToLlmCompletionRequestPayload(LlmCompletionRequest? request)
+    {
+        if (request is null)
+        {
+            return null;
+        }
+
+        return JsonSerializer.SerializeToNode(request, DefaultOptions);
+    }
+
+    /// <summary>
+    /// Converts a <see cref="JsonNode"/> to an <see cref="LlmCompletionRequest"/>.
+    /// </summary>
+    /// <param name="node">The JSON node.</param>
+    /// <returns>The deserialized request.</returns>
+    public static LlmCompletionRequest? FromLlmCompletionRequestPayload(JsonNode? node)
+    {
+        if (node is null)
+        {
+            return null;
+        }
+
+        return node.Deserialize<LlmCompletionRequest>(DefaultOptions);
+    }
+
+    /// <summary>
+    /// Converts an <see cref="LlmCompletionResponse"/> to a <see cref="JsonNode"/>.
+    /// </summary>
+    /// <param name="response">The LLM completion response.</param>
+    /// <returns>A JSON representation of the response.</returns>
+    public static JsonNode? ToLlmCompletionResponsePayload(LlmCompletionResponse? response)
+    {
+        if (response is null)
+        {
+            return null;
+        }
+
+        return JsonSerializer.SerializeToNode(response, DefaultOptions);
+    }
+
+    /// <summary>
+    /// Converts a <see cref="JsonNode"/> to an <see cref="LlmCompletionResponse"/>.
+    /// </summary>
+    /// <param name="node">The JSON node.</param>
+    /// <returns>The deserialized response.</returns>
+    public static LlmCompletionResponse? FromLlmCompletionResponsePayload(JsonNode? node)
+    {
+        if (node is null)
+        {
+            return null;
+        }
+
+        return node.Deserialize<LlmCompletionResponse>(DefaultOptions);
     }
 
     #endregion
