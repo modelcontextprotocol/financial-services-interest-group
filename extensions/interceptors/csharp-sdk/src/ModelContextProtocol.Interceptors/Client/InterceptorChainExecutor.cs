@@ -35,7 +35,9 @@ public class InterceptorChainExecutor
     /// <param name="services">Optional service provider for dependency injection.</param>
     public InterceptorChainExecutor(IEnumerable<McpClientInterceptor> interceptors, IServiceProvider? services = null)
     {
-        _interceptors = interceptors?.ToList() ?? throw new ArgumentNullException(nameof(interceptors));
+        Throw.IfNull(interceptors);
+
+        _interceptors = interceptors.ToList();
         _services = services;
     }
 

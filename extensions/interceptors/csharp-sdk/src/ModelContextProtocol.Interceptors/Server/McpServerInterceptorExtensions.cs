@@ -70,10 +70,7 @@ public static class McpServerInterceptorExtensions
         TInterceptorType target,
         JsonSerializerOptions? serializerOptions = null)
     {
-        if (target is null)
-        {
-            throw new ArgumentNullException(nameof(target));
-        }
+        Throw.IfNull(target);
 
         if (target is IEnumerable<McpServerInterceptor> interceptors)
         {
@@ -120,10 +117,7 @@ public static class McpServerInterceptorExtensions
         IServiceProvider? services = null,
         JsonSerializerOptions? serializerOptions = null)
     {
-        if (interceptorTypes is null)
-        {
-            throw new ArgumentNullException(nameof(interceptorTypes));
-        }
+        Throw.IfNull(interceptorTypes);
 
         foreach (var interceptorType in interceptorTypes)
         {

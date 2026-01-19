@@ -76,8 +76,11 @@ public sealed class InterceptingMcpClient : IAsyncDisposable
     /// <exception cref="ArgumentNullException"><paramref name="inner"/> or <paramref name="options"/> is <see langword="null"/>.</exception>
     public InterceptingMcpClient(McpClient inner, InterceptingMcpClientOptions options)
     {
-        _inner = inner ?? throw new ArgumentNullException(nameof(inner));
-        _options = options ?? throw new ArgumentNullException(nameof(options));
+        Throw.IfNull(inner);
+        Throw.IfNull(options);
+
+        _inner = inner;
+        _options = options;
         _executor = new InterceptorChainExecutor(
             options.Interceptors,
             options.Services);
@@ -146,10 +149,7 @@ public sealed class InterceptingMcpClient : IAsyncDisposable
         RequestOptions? options = null,
         CancellationToken cancellationToken = default)
     {
-        if (toolName is null)
-        {
-            throw new ArgumentNullException(nameof(toolName));
-        }
+        Throw.IfNull(toolName);
 
         // Phase 1: Intercept outgoing request
         var requestPayload = PayloadConverter.ToCallToolRequestPayload(toolName, arguments);
@@ -277,10 +277,7 @@ public sealed class InterceptingMcpClient : IAsyncDisposable
         CallToolRequestParams requestParams,
         CancellationToken cancellationToken = default)
     {
-        if (requestParams is null)
-        {
-            throw new ArgumentNullException(nameof(requestParams));
-        }
+        Throw.IfNull(requestParams);
 
         // Phase 1: Intercept outgoing request
         var requestPayload = PayloadConverter.ToCallToolRequestParamsPayload(requestParams);

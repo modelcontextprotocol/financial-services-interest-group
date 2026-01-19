@@ -48,7 +48,8 @@ public sealed class McpInterceptorValidationException : McpException
     public McpInterceptorValidationException(string message, InterceptorChainResult chainResult)
         : base(message)
     {
-        ChainResult = chainResult ?? throw new ArgumentNullException(nameof(chainResult));
+        Throw.IfNull(chainResult);
+        ChainResult = chainResult;
     }
 
     /// <summary>
@@ -60,7 +61,8 @@ public sealed class McpInterceptorValidationException : McpException
     public McpInterceptorValidationException(string message, InterceptorChainResult chainResult, Exception? innerException)
         : base(message, innerException)
     {
-        ChainResult = chainResult ?? throw new ArgumentNullException(nameof(chainResult));
+        Throw.IfNull(chainResult);
+        ChainResult = chainResult;
     }
 
     /// <summary>

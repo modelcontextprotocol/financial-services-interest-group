@@ -50,15 +50,8 @@ public static class InterceptingMcpClientExtensions
         this McpClient client,
         InterceptingMcpClientOptions options)
     {
-        if (client is null)
-        {
-            throw new ArgumentNullException(nameof(client));
-        }
-
-        if (options is null)
-        {
-            throw new ArgumentNullException(nameof(options));
-        }
+        Throw.IfNull(client);
+        Throw.IfNull(options);
 
         return new InterceptingMcpClient(client, options);
     }
@@ -97,10 +90,7 @@ public static class InterceptingMcpClientExtensions
         this McpClient client,
         params McpClientInterceptor[] interceptors)
     {
-        if (client is null)
-        {
-            throw new ArgumentNullException(nameof(client));
-        }
+        Throw.IfNull(client);
 
         return new InterceptingMcpClient(client, new InterceptingMcpClientOptions
         {
@@ -127,10 +117,7 @@ public static class InterceptingMcpClientExtensions
         IEnumerable<McpClientInterceptor> interceptors,
         IServiceProvider? services = null)
     {
-        if (client is null)
-        {
-            throw new ArgumentNullException(nameof(client));
-        }
+        Throw.IfNull(client);
 
         return new InterceptingMcpClient(client, new InterceptingMcpClientOptions
         {

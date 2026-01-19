@@ -1,6 +1,6 @@
-# AGENTS.md - C# SDK for MCP Interceptors
+# CLAUDE.md - C# SDK for MCP Interceptors
 
-This document provides guidance for AI coding agents working on the MCP Interceptors C# SDK implementation.
+This document provides guidance for Claude (and other AI assistants) working on the MCP Interceptors C# SDK implementation.
 
 > **Note:** See [TODO.md](./TODO.md) for a list of code style alignment tasks with the MCP C# SDK.
 

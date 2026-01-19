@@ -25,10 +25,7 @@ internal sealed partial class ReflectionMcpClientInterceptor : McpClientIntercep
         Delegate method,
         McpClientInterceptorCreateOptions? options)
     {
-        if (method is null)
-        {
-            throw new ArgumentNullException(nameof(method));
-        }
+        Throw.IfNull(method);
 
         options = DeriveOptions(method.Method, options);
 
@@ -43,10 +40,7 @@ internal sealed partial class ReflectionMcpClientInterceptor : McpClientIntercep
         object? target,
         McpClientInterceptorCreateOptions? options)
     {
-        if (method is null)
-        {
-            throw new ArgumentNullException(nameof(method));
-        }
+        Throw.IfNull(method);
 
         options = DeriveOptions(method, options);
 
@@ -61,15 +55,8 @@ internal sealed partial class ReflectionMcpClientInterceptor : McpClientIntercep
         Func<ClientInterceptorContext<InvokeInterceptorRequestParams>, object> createTargetFunc,
         McpClientInterceptorCreateOptions? options)
     {
-        if (method is null)
-        {
-            throw new ArgumentNullException(nameof(method));
-        }
-
-        if (createTargetFunc is null)
-        {
-            throw new ArgumentNullException(nameof(createTargetFunc));
-        }
+        Throw.IfNull(method);
+        Throw.IfNull(createTargetFunc);
 
         options = DeriveOptions(method, options);
 
@@ -147,10 +134,7 @@ internal sealed partial class ReflectionMcpClientInterceptor : McpClientIntercep
         ClientInterceptorContext<InvokeInterceptorRequestParams> context,
         CancellationToken cancellationToken = default)
     {
-        if (context is null)
-        {
-            throw new ArgumentNullException(nameof(context));
-        }
+        Throw.IfNull(context);
 
         cancellationToken.ThrowIfCancellationRequested();
 

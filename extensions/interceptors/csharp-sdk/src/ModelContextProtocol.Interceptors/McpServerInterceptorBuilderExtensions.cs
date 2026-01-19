@@ -37,10 +37,7 @@ public static class McpServerInterceptorBuilderExtensions
         this IMcpServerBuilder builder,
         JsonSerializerOptions? serializerOptions = null)
     {
-        if (builder is null)
-        {
-            throw new ArgumentNullException(nameof(builder));
-        }
+        Throw.IfNull(builder);
 
         foreach (var interceptorMethod in typeof(TInterceptorType).GetMethods(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance))
         {
@@ -80,15 +77,8 @@ public static class McpServerInterceptorBuilderExtensions
         TInterceptorType target,
         JsonSerializerOptions? serializerOptions = null)
     {
-        if (builder is null)
-        {
-            throw new ArgumentNullException(nameof(builder));
-        }
-
-        if (target is null)
-        {
-            throw new ArgumentNullException(nameof(target));
-        }
+        Throw.IfNull(builder);
+        Throw.IfNull(target);
 
         if (target is IEnumerable<McpServerInterceptor> interceptors)
         {
@@ -116,15 +106,8 @@ public static class McpServerInterceptorBuilderExtensions
     /// <exception cref="ArgumentNullException"><paramref name="builder"/> or <paramref name="interceptors"/> is <see langword="null"/>.</exception>
     public static IMcpServerBuilder WithInterceptors(this IMcpServerBuilder builder, IEnumerable<McpServerInterceptor> interceptors)
     {
-        if (builder is null)
-        {
-            throw new ArgumentNullException(nameof(builder));
-        }
-
-        if (interceptors is null)
-        {
-            throw new ArgumentNullException(nameof(interceptors));
-        }
+        Throw.IfNull(builder);
+        Throw.IfNull(interceptors);
 
         foreach (var interceptor in interceptors)
         {
@@ -151,15 +134,8 @@ public static class McpServerInterceptorBuilderExtensions
     [RequiresUnreferencedCode(WithInterceptorsRequiresUnreferencedCodeMessage)]
     public static IMcpServerBuilder WithInterceptors(this IMcpServerBuilder builder, IEnumerable<Type> interceptorTypes, JsonSerializerOptions? serializerOptions = null)
     {
-        if (builder is null)
-        {
-            throw new ArgumentNullException(nameof(builder));
-        }
-
-        if (interceptorTypes is null)
-        {
-            throw new ArgumentNullException(nameof(interceptorTypes));
-        }
+        Throw.IfNull(builder);
+        Throw.IfNull(interceptorTypes);
 
         foreach (var interceptorType in interceptorTypes)
         {
@@ -211,10 +187,7 @@ public static class McpServerInterceptorBuilderExtensions
     [RequiresUnreferencedCode(WithInterceptorsRequiresUnreferencedCodeMessage)]
     public static IMcpServerBuilder WithInterceptorsFromAssembly(this IMcpServerBuilder builder, Assembly? interceptorAssembly = null, JsonSerializerOptions? serializerOptions = null)
     {
-        if (builder is null)
-        {
-            throw new ArgumentNullException(nameof(builder));
-        }
+        Throw.IfNull(builder);
 
         interceptorAssembly ??= Assembly.GetCallingAssembly();
 
@@ -250,10 +223,7 @@ public static class McpServerInterceptorBuilderExtensions
     /// </remarks>
     public static IMcpServerBuilder WithListInterceptorsHandler(this IMcpServerBuilder builder, Func<RequestContext<ListInterceptorsRequestParams>, CancellationToken, ValueTask<ListInterceptorsResult>> handler)
     {
-        if (builder is null)
-        {
-            throw new ArgumentNullException(nameof(builder));
-        }
+        Throw.IfNull(builder);
 
         builder.Services.Configure<InterceptorServerHandlers>(s => s.ListInterceptorsHandler = handler);
         return builder;
@@ -273,10 +243,7 @@ public static class McpServerInterceptorBuilderExtensions
     /// </remarks>
     public static IMcpServerBuilder WithInvokeInterceptorHandler(this IMcpServerBuilder builder, Func<RequestContext<InvokeInterceptorRequestParams>, CancellationToken, ValueTask<ValidationInterceptorResult>> handler)
     {
-        if (builder is null)
-        {
-            throw new ArgumentNullException(nameof(builder));
-        }
+        Throw.IfNull(builder);
 
         builder.Services.Configure<InterceptorServerHandlers>(s => s.InvokeInterceptorHandler = handler);
         return builder;
@@ -301,10 +268,7 @@ public static class McpServerInterceptorBuilderExtensions
     /// </remarks>
     public static IMcpServerBuilder AddListInterceptorsFilter(this IMcpServerBuilder builder, Func<RequestContext<ListInterceptorsRequestParams>, Func<RequestContext<ListInterceptorsRequestParams>, CancellationToken, ValueTask<ListInterceptorsResult>>, CancellationToken, ValueTask<ListInterceptorsResult>> filter)
     {
-        if (builder is null)
-        {
-            throw new ArgumentNullException(nameof(builder));
-        }
+        Throw.IfNull(builder);
 
         builder.Services.Configure<InterceptorServerFilters>(options => options.ListInterceptorsFilters.Add(filter));
         return builder;
@@ -325,10 +289,7 @@ public static class McpServerInterceptorBuilderExtensions
     /// </remarks>
     public static IMcpServerBuilder AddInvokeInterceptorFilter(this IMcpServerBuilder builder, Func<RequestContext<InvokeInterceptorRequestParams>, Func<RequestContext<InvokeInterceptorRequestParams>, CancellationToken, ValueTask<ValidationInterceptorResult>>, CancellationToken, ValueTask<ValidationInterceptorResult>> filter)
     {
-        if (builder is null)
-        {
-            throw new ArgumentNullException(nameof(builder));
-        }
+        Throw.IfNull(builder);
 
         builder.Services.Configure<InterceptorServerFilters>(options => options.InvokeInterceptorFilters.Add(filter));
         return builder;

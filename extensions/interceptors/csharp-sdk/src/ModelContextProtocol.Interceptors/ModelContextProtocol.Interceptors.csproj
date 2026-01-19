@@ -24,15 +24,22 @@
     <IsAotCompatible>true</IsAotCompatible>
   </PropertyGroup>
 
+  <!-- Include common utilities for all target frameworks -->
+  <ItemGroup>
+    <Compile Include="..\Common\Throw.cs" Link="Common\Throw.cs" />
+  </ItemGroup>
+
   <!-- Include polyfills for netstandard2.0 -->
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <Compile Include="..\Common\Polyfills\System\Runtime\CompilerServices\IsExternalInit.cs" Link="Polyfills\IsExternalInit.cs" />
     <Compile Include="..\Common\Polyfills\System\Runtime\CompilerServices\RequiredMemberAttribute.cs" Link="Polyfills\RequiredMemberAttribute.cs" />
     <Compile Include="..\Common\Polyfills\System\Runtime\CompilerServices\CompilerFeatureRequiredAttribute.cs" Link="Polyfills\CompilerFeatureRequiredAttribute.cs" />
+    <Compile Include="..\Common\Polyfills\System\Runtime\CompilerServices\CallerArgumentExpressionAttribute.cs" Link="Polyfills\CallerArgumentExpressionAttribute.cs" />
     <Compile Include="..\Common\Polyfills\System\Diagnostics\CodeAnalysis\SetsRequiredMembersAttribute.cs" Link="Polyfills\SetsRequiredMembersAttribute.cs" />
     <Compile Include="..\Common\Polyfills\System\Diagnostics\CodeAnalysis\DynamicallyAccessedMembersAttribute.cs" Link="Polyfills\DynamicallyAccessedMembersAttribute.cs" />
     <Compile Include="..\Common\Polyfills\System\Diagnostics\CodeAnalysis\DynamicallyAccessedMemberTypes.cs" Link="Polyfills\DynamicallyAccessedMemberTypes.cs" />
     <Compile Include="..\Common\Polyfills\System\Diagnostics\CodeAnalysis\RequiresUnreferencedCode.cs" Link="Polyfills\RequiresUnreferencedCode.cs" />
+    <Compile Include="..\Common\Polyfills\System\Diagnostics\CodeAnalysis\NullableAttributes.cs" Link="Polyfills\NullableAttributes.cs" />
   </ItemGroup>
 
   <ItemGroup>
