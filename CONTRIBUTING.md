@@ -1,101 +1,62 @@
 # Contributing to FSIG
 
-Thank you for your interest in contributing to the MCP Financial Services Interest Group!
+Thank you for your interest in contributing to the MCP Financial Services Interest Group! For the group's mission, scope, leadership, and current discussion topics, see the [charter](https://modelcontextprotocol.io/community/interest-groups/financial-services).
 
-## Quick Start
+## How to Participate
 
-1. **Join the Community**
-   - Join the `#financial-services-ig` channel on [MCP Discord](https://discord.com/invite/6CSzBmMkjX)
-   - Introduce yourself and your interests
-   - Review recent [meeting notes](https://docs.google.com/document/d/19HwCw7i4k-omABGnRYGGuLdMJNXQc3rs_QRgJxPhQU8/edit?tab=t.0)
+Anyone can participate — no approval or membership is required. You can:
 
-2. **Understand the Scope**
-   - Read the [README](./README.md) for an overview
-   - Review the [CHARTER](./CHARTER.md) for mission and scope
-   - Check [GOVERNANCE](./GOVERNANCE.md) for roles and decision-making
+- Join the [#financial-services-ig](https://discord.gg/6CSzBmMkjX) channel on the [MCP Discord](https://modelcontextprotocol.io/community/communication#discord)
+- Attend the bi-weekly meetings (see [Meetings](#meetings))
+- Browse and open [issues](https://github.com/modelcontextprotocol/financial-services-interest-group/issues)
+- Submit PRs for extensions, documentation, or improvements
 
-3. **Start Contributing**
-   - Attend bi-weekly meetings (no approval needed!)
-   - Browse [open issues](https://github.com/modelcontextprotocol/financial-services-interest-group/issues)
-   - Open issues for new ideas or questions
-   - Submit PRs for extensions, documentation, or improvements
+General contribution norms follow the [MCP Contributing Guide](https://github.com/modelcontextprotocol/.github/blob/main/CONTRIBUTING.md).
 
-## General Guidelines
+## Communication Channels
 
-For general contribution guidelines, please follow the [MCP Contributing Guide](https://github.com/modelcontextprotocol/.github/blob/main/CONTRIBUTING.md).
+| Channel | Purpose |
+| :--- | :--- |
+| [Discord #financial-services-ig](https://discord.gg/6CSzBmMkjX) | Quick questions, coordination, async discussion |
+| [GitHub Issues](https://github.com/modelcontextprotocol/financial-services-interest-group/issues) | Proposals, bugs, and structured discussions |
+| GitHub Discussions | Longer-form conversations |
+| [Meeting notes](https://docs.google.com/document/d/19HwCw7i4k-omABGnRYGGuLdMJNXQc3rs_QRgJxPhQU8/edit) | Agendas, decisions, and action items |
 
-### FSIG-Specific Considerations
+## Meetings
 
-**Antitrust Compliance:**
-All contributions and discussions must comply with the [MCP Antitrust Policy](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/ANTITRUST.md).
+The FSIG meets every two weeks (16:00–17:00 London). The schedule is on the [MCP meetings calendar](https://meet.modelcontextprotocol.io/tag/finance). Meeting requirements — open attendance, advance agendas, and public notes — follow MCP [group governance](https://modelcontextprotocol.io/community/working-interest-groups#meeting-requirements). Each meeting opens with an [antitrust](https://modelcontextprotocol.io/community/antitrust) reminder.
 
-**Do NOT discuss:**
-- Pricing, costs, or margins
-- Customer lists or strategies
-- Market division or competitive coordination
-- Confidential business information
+## Decision-Making
 
-**Focus on:**
-- Technical standards and specifications
-- Implementation approaches
-- Interoperability patterns
-- Documentation and testing
+The FSIG is an Interest Group: it facilitates discussion and knowledge-sharing rather than making binding spec decisions. The decision progression (lazy consensus → escalation) and participation tiers are defined in MCP [group governance](https://modelcontextprotocol.io/community/working-interest-groups). Group-specific scope is in the [charter](https://modelcontextprotocol.io/community/interest-groups/financial-services#scope).
+
+## Antitrust Compliance
+
+All contributions and discussions must comply with the [MCP Antitrust Policy](https://modelcontextprotocol.io/community/antitrust).
+
+**Do not discuss:** pricing, costs, or margins; customer lists or strategies; market division or competitive coordination; confidential business information.
+
+**Focus on:** technical standards and specifications, implementation approaches, interoperability patterns, documentation, and testing.
 
 ## Extension Development
 
 When developing MCP extensions for financial services:
 
-1. **Start with a Proposal**
-   - Open an issue describing the extension
-   - Discuss use cases and requirements
-   - Get feedback before implementation
-
-2. **Follow MCP Standards**
-   - Align with the [MCP Specification](https://modelcontextprotocol.io/specification)
-   - Use standard MCP patterns and conventions
-   - Document deviations clearly
-
-3. **Include Documentation & Examples**
-   - Clear README with purpose and usage
-   - Working examples demonstrating the extension
-   - Implementation notes and considerations
-
-4. **Consider Broad Applicability**
-   - Could this extension benefit other domains?
-   - Is there potential for promotion to core spec?
-   - Document use cases beyond financial services
+1. **Start with a proposal** — Open an issue describing the extension; discuss use cases and requirements before implementation.
+2. **Follow MCP standards** — Align with the [MCP specification](https://modelcontextprotocol.io/specification) and document any deviations.
+3. **Include documentation and examples** — A clear README, working examples, and implementation notes.
+4. **Consider broad applicability** — Could it benefit other domains? Document use cases beyond financial services.
 
 ## Proposing Core Spec Enhancements
 
-If you believe an extension should be promoted to the core MCP spec:
+When an extension shows applicability beyond financial services, it becomes a candidate for promotion to the core spec via a [SEP](https://modelcontextprotocol.io/community/sep-guidelines):
 
-1. **Gather Implementation Experience** — Deploy in real scenarios and collect feedback
-2. **Discuss with FSIG** — Present at a meeting and get consensus from maintainers
-3. **Contact Core Maintainer Liaison** — Reach out to [David Soria Parra](https://github.com/dsp-ant)
-4. **Draft SEP** — Follow the MCP SEP process with liaison support
-
-See [CHARTER.md](./CHARTER.md#proactive-promotion) for more details.
-
-## Communication Channels
-
-- **Discord:** `#financial-services-ig` — Real-time chat and questions
-- **GitHub Issues:** Proposals, bugs, and structured discussions
-- **GitHub Discussions:** Longer-form conversations
-- **Meetings:** Bi-weekly sync (see [README](./README.md#️-meetings))
-
-## Recognition
-
-Active contributors are recognized in [GOVERNANCE.md](./GOVERNANCE.md). After attending 2+ meetings or making substantive contributions, you can:
-- Self-nominate by opening a PR
-- Or a maintainer may add you
+1. **Gather implementation experience** — Deploy in real scenarios and collect feedback.
+2. **Discuss with the FSIG** — Present at a meeting and build consensus.
+3. **Draft a SEP** — Follow the [SEP guidelines](https://modelcontextprotocol.io/community/sep-guidelines) with core-maintainer sponsorship.
 
 ## Getting Help
 
-- **Ask in Discord** — The `#financial-services-ig` channel is welcoming and responsive
-- **Open an issue** — For specific questions or proposals
-- **Attend a meeting** — Get face-time with maintainers and other contributors
-- **Contact maintainers** — See [GOVERNANCE.md](./GOVERNANCE.md) for current maintainers
-
----
-
-**Thank you for contributing to FSIG! Together we're making MCP more accessible and useful for financial services.** 🎉
+- Ask in the [#financial-services-ig](https://discord.gg/6CSzBmMkjX) Discord channel
+- Open an [issue](https://github.com/modelcontextprotocol/financial-services-interest-group/issues)
+- Attend a meeting
