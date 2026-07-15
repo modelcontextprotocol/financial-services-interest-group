@@ -20,6 +20,7 @@ FSIG members are actively contributing to these MCP working groups and experimen
 - **Interceptors**
   - [Working group](https://modelcontextprotocol.io/community/working-groups/interceptors)
   - [experimental-ext-interceptors](https://github.com/modelcontextprotocol/experimental-ext-interceptors)
+- **Variants**
   - [experimental-ext-variants](https://github.com/modelcontextprotocol/experimental-ext-variants)
 - **Skills over MCP**
   - [Working group](https://modelcontextprotocol.io/community/working-groups/skills-over-mcp)
