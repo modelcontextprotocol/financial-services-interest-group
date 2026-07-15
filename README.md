@@ -13,6 +13,18 @@ The FSIG coordinates financial-industry stakeholders to:
 
 > **📜 See the [CHARTER](./CHARTER.md) for detailed governance, scope, and processes.**
 
+## 🔀 Related Working Groups
+
+FSIG members are actively contributing to these MCP working groups and experimental extensions:
+
+- **Interceptors**
+  - [Working group](https://modelcontextprotocol.io/community/working-groups/interceptors)
+  - [experimental-ext-interceptors](https://github.com/modelcontextprotocol/experimental-ext-interceptors)
+  - [experimental-ext-variants](https://github.com/modelcontextprotocol/experimental-ext-variants)
+- **Skills over MCP**
+  - [Working group](https://modelcontextprotocol.io/community/working-groups/skills-over-mcp)
+  - [experimental-ext-skills](https://github.com/modelcontextprotocol/experimental-ext-skills)
+
 ## 💬 Communication
 
 - **Primary Channel:** [MCP Discord](https://discord.com/invite/6CSzBmMkjX) → `#financial-services-ig`
@@ -88,6 +100,7 @@ We welcome contributions of all kinds! Please review:
 ## 🔗 Related Resources
 
 - [Model Context Protocol](https://modelcontextprotocol.io)
+- [FSIG on modelcontextprotocol.io](https://modelcontextprotocol.io/community/interest-groups/financial-services)
 - [MCP Specification](https://spec.modelcontextprotocol.io)
 - [MCP GitHub Organization](https://github.com/modelcontextprotocol)
 - [MCP Discord Community](https://discord.com/invite/6CSzBmMkjX)
