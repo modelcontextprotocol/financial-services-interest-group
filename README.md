@@ -36,11 +36,11 @@ FSIG members are actively contributing to these MCP working groups and experimen
 
 ## 🗓️ Meetings
 
-**Cadence:** Every two weeks 
-**Time:** 4-5pm London (BST/GMT)  
-**Duration:** 60 minutes  
-**Format:** Virtual
-**Calendar Invite:** [MCP Meetings - Finance](https://meet.modelcontextprotocol.io/tag/finance)
+- **Cadence:** Every two weeks
+- **Time:** 4-5pm London (BST/GMT)
+- **Duration:** 60 minutes
+- **Format:** Virtual
+- **Calendar Invite:** [MCP Meetings - Finance](https://meet.modelcontextprotocol.io/tag/finance)
 
 > **Note:** See the [agenda doc](https://docs.google.com/document/d/19HwCw7i4k-omABGnRYGGuLdMJNXQc3rs_QRgJxPhQU8/edit?tab=t.0) for accurate next meeting times.
 
@@ -102,7 +102,7 @@ We welcome contributions of all kinds! Please review:
 
 - [Model Context Protocol](https://modelcontextprotocol.io)
 - [FSIG on modelcontextprotocol.io](https://modelcontextprotocol.io/community/interest-groups/financial-services)
-- [MCP Specification](https://spec.modelcontextprotocol.io)
+- [MCP Specification](https://modelcontextprotocol.io/specification)
 - [MCP GitHub Organization](https://github.com/modelcontextprotocol)
 - [MCP Discord Community](https://discord.com/invite/6CSzBmMkjX)
 

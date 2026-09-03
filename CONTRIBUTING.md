@@ -51,7 +51,7 @@ When developing MCP extensions for financial services:
    - Get feedback before implementation
 
 2. **Follow MCP Standards**
-   - Align with the [MCP Specification](https://spec.modelcontextprotocol.io)
+   - Align with the [MCP Specification](https://modelcontextprotocol.io/specification)
    - Use standard MCP patterns and conventions
    - Document deviations clearly
 
