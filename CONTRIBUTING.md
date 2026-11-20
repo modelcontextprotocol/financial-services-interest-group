@@ -24,9 +24,9 @@ General contribution norms follow the [MCP Contributing Guide](https://github.co
 
 ## Meetings
 
-FSIG proposes a **monthly, up-to-60-minute** open industry forum, pending the [official charter amendment](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/3572). Check the [MCP finance calendar](https://meet.modelcontextprotocol.io/tag/finance) for the current schedule. The agenda is lightweight and community-driven, with no fixed allocations: recurring prompts include introductions and ways to join WGs, common problems, existing MCP approaches, WG/IG connections and follow-ups. Participants can propose additional topics ahead of time, and Facilitators can reconsider meeting frequency if interest or agenda volume increases.
+FSIG proposes a **monthly, up-to-60-minute** open industry forum, pending the [official charter amendment](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/3572). Check the [MCP finance calendar](https://meet.modelcontextprotocol.io/tag/finance) for the current schedule. Recurring discussion prompts include introductions, shared problems, existing MCP approaches, WG/IG connections and follow-ups. The cadence can be revisited as demand grows.
 
-MCP [meeting governance](https://modelcontextprotocol.io/community/working-interest-groups#meetings-and-channels) requires open attendance, calendar publication at least seven days ahead, a public agenda in GitHub Discussions, and notes within 48 hours. Meetings follow the [antitrust policy](https://modelcontextprotocol.io/community/antitrust).
+Facilitators invite agenda suggestions in a thread in `#financial-services-ig` ahead of each meeting, where anyone can reply with a topic or question. They consolidate these into a lightweight public agenda, without fixed time slots. In line with [MCP meeting governance](https://modelcontextprotocol.io/community/working-interest-groups#meetings-and-channels), the agenda or its link is posted in the GitHub Discussions Meeting Notes category before the meeting, and notes are published to the same discussion within 48 hours. This follows the [Security IG](https://modelcontextprotocol.io/community/interest-groups/security) and [Authorization IG](https://modelcontextprotocol.io/community/interest-groups/auth) approaches.
 
 ## Decision-Making
 
