@@ -1,6 +1,6 @@
 # MCP Financial Services Interest Group (FSIG)
 
-The **MCP Financial Services Interest Group (FSIG)** is a collaborative community advancing the [Model Context Protocol (MCP)](https://modelcontextprotocol.io) for use in regulated financial services environments.
+The **MCP Financial Services Interest Group (FSIG)** is a forum for financial-services participants to identify shared problems, exchange implementation experience, and connect those problems to existing [Model Context Protocol (MCP)](https://modelcontextprotocol.io) capabilities and community work. Its default output is a clearer problem statement or a useful referral—not a new protocol feature.
 
 **Charter:** [modelcontextprotocol.io/community/interest-groups/financial-services](https://modelcontextprotocol.io/community/interest-groups/financial-services) — mission, scope, leadership, membership, operations, and discussion topics.
 **Calendar:** [MCP Meetings — Finance](https://meet.modelcontextprotocol.io/tag/finance)
@@ -9,35 +9,46 @@ The **MCP Financial Services Interest Group (FSIG)** is a collaborative communit
 
 ## Mission
 
-The FSIG coordinates financial-industry stakeholders to:
+The FSIG brings financial-industry stakeholders together to:
 
-- **Identify and document** finance-specific interoperability problems, use cases, requirements, and potential extensions (compliance/auditability, data lineage & provenance, guardrails & attestation, etc.)
-- **Contribute to spec enhancements** by developing proposals and collaborating with a sponsoring MCP Working Group (or, exceptionally, the Core Maintainers)
-- **Build consensus and recommend interoperable approaches** across regulated institutions
-- **Provide a neutral forum** to address regulatory and risk constraints with open technical solutions
+- **Identify common problems:** Share cross-institution use cases, constraints and interoperability gaps, distinguishing common needs from institution-specific choices.
+- **Share existing approaches:** Discuss publicly shareable implementation patterns, including how existing MCP primitives can be combined within the current specification.
+- **Connect to existing work:** Refer unresolved protocol gaps and interested participants to an existing MCP Working Group (WG), rather than duplicating its work.
+- **Build a case for new work when warranted:** For a substantial, well-evidenced gap with no relevant WG, gather interest across IGs and the wider community and help contributors propose a new WG through the established process.
+
+This is FSIG's preferred operating model, not a prohibition on exploratory technical work. The [MCP group governance](https://modelcontextprotocol.io/community/working-interest-groups) defines IG outputs as problem statements, use cases, recommendations and input to WGs and SEPs; the [FSIG charter](https://modelcontextprotocol.io/community/interest-groups/financial-services) also permits extension development, which remains subject to the broader MCP governance and is not the default response to a problem.
 
 See the [charter](https://modelcontextprotocol.io/community/interest-groups/financial-services) for the full scope, leadership, membership, and current discussion topics.
 
 ## Interest Groups vs Working Groups
 
-Under the [MCP Working and Interest Group governance](https://modelcontextprotocol.io/community/working-interest-groups), **Interest Groups (IGs) identify and discuss problems; Working Groups (WGs) develop concrete solutions**.
+The authoritative [MCP Working Groups and Interest Groups governance](https://modelcontextprotocol.io/community/working-interest-groups) (adopted through [SEP-2149](https://modelcontextprotocol.io/seps/2149)) distinguishes **IGs that identify and discuss problems** from **WGs that build scoped solutions**.
 
 | | Interest Group (FSIG) | Working Group |
 | --- | --- | --- |
-| Purpose | Identify problems, gather requirements, exchange expertise and build rough consensus | Deliver a scoped technical solution |
-| Typical outputs | Problem statements, use cases, recommendations, input to SEPs and WGs | SEPs, reference implementations, or stewardship of endorsed MCP projects |
-| Decisions | Non-binding rough consensus; an IG may adopt formal procedures for internal decisions | Binding within delegated scope, subject to escalation and Core Maintainer authority |
+| Primary purpose | Identify and discuss common problems, exchange expertise, and route requirements | Build a concrete solution |
+| Typical outputs | Problem statements, use cases, recommendations, input to WGs and SEPs | SEPs, reference implementations, or stewardship of endorsed projects |
+| Decisions | Non-binding rough consensus (formal internal procedures are possible) | Binding within delegated scope, subject to escalation |
 | Leadership | Facilitators | Leads |
-| Duration | Ongoing while relevant | Until agreed deliverables are complete |
-| SEP sponsorship | **Cannot formally sponsor a SEP**; members may author, prototype and contribute | **Can sponsor SEPs** within the WG's scope, following its decision process |
+| Duration | Ongoing while relevant | Until deliverables are complete |
+| SEP sponsorship | Cannot sponsor as an IG | Can sponsor within scope following WG agreement |
 
-**How FSIG work becomes a SEP:** FSIG can frame the problem, gather cross-industry requirements, develop proposals and prototypes, and contribute to SEP drafts. Before formal SEP review, an existing WG must agree to sponsor the proposal. If no WG covers the topic, FSIG participants can propose forming one. The Core Maintainers may sponsor a SEP directly as an **exception**, not the default path. Formal sponsorship does not itself approve a SEP; Core Maintainers make the acceptance decision.
+### How FSIG handles a problem
 
-An IG can also initiate an [experimental extension](https://blog.modelcontextprotocol.io/posts/mcp-roadmap/) under SEP-2133; experimental work is not the same as formal SEP sponsorship. See the authoritative [SEP Guidelines](https://modelcontextprotocol.io/community/sep-guidelines) for the current workflow and sponsor requirements. Group charters cannot override MCP-wide governance.
+1. **Understand the common need.** Collect cross-institution use cases, constraints and evidence; articulate the problem without assuming a particular technical solution.
+2. **Find what works today.** Share existing industry patterns and ways to compose current MCP primitives. Document reusable examples and limitations before suggesting protocol changes.
+3. **Connect to existing groups.** If a genuine gap remains, identify the relevant WG and pass along the problem statement, evidence and interested contributors. Related IGs can help refine requirements.
+4. **Build momentum for a WG only when justified.** If no WG covers a widely acknowledged problem with a clear potential deliverable, gather cross-IG/community interest and prospective contributors, then follow [MCP's WG formation process](https://modelcontextprotocol.io/community/working-interest-groups#forming-a-group). Cross-IG interest is useful evidence, not a formal prerequisite or sufficient approval: the group and its leadership require the prescribed sponsorship and charter process.
+
+This progression reflects the [governance document's usual IG-to-WG path](https://modelcontextprotocol.io/community/working-interest-groups#working-groups-and-interest-groups). It is an FSIG workflow preference, **not** an additional mandatory MCP-wide gate.
+
+### SEP sponsorship boundary
+
+FSIG participants can contribute problem statements, requirements, implementation evidence and draft proposals, but the IG itself does not sponsor SEPs. The [official SEP template](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/seps/TEMPLATE.md) requires the sponsor to be named on behalf of a WG or the Core Maintainers, or to be `None` until sponsorship is secured. Under the [SEP Guidelines](https://modelcontextprotocol.io/community/sep-guidelines#sponsors), a proposal may be developed as an unsponsored draft PR, but cannot enter the formal SEP process until a WG agrees to sponsor it or, exceptionally, the Core Maintainers do. Sponsorship is not approval.
 
 ## Related Working Groups
 
-FSIG members are actively contributing to these MCP working groups and experimental extensions:
+Examples of existing MCP working groups and experimental work relevant to FSIG discussions. These are possible destinations for requirements and interested contributors, not FSIG-owned deliverables:
 
 - **Interceptors**
   - [Working group](https://modelcontextprotocol.io/community/working-groups/interceptors)
@@ -54,12 +65,14 @@ FSIG members are actively contributing to these MCP working groups and experimen
 
 See the [calendar](https://meet.modelcontextprotocol.io/tag/finance) for the next meeting and the [meeting notes doc](https://docs.google.com/document/d/19HwCw7i4k-omABGnRYGGuLdMJNXQc3rs_QRgJxPhQU8/edit) for agendas. Meeting requirements — open attendance, advance agendas, and public notes — follow MCP [group governance](https://modelcontextprotocol.io/community/working-interest-groups#meeting-requirements). Each meeting opens with an [antitrust](https://modelcontextprotocol.io/community/antitrust) reminder.
 
-## Current Focus Areas
+## Example Discussion Areas
 
-1. **Regulatory Audit & Attestation** — Portable, verifiable event/claim models
-2. **Data Lineage & Citation** — Provenance, consent metadata, and source attribution
-3. **Guardrails & Security** — Verification frameworks and cryptographic attestations
-4. **Policy Enforcement** — Declarative policies for tool usage and data handling
+These are areas for identifying shared problems and existing approaches, not commitments to design new extensions:
+
+1. **Regulatory Audit & Attestation** — Audit requirements and current approaches to recording and verifying activity
+2. **Data Lineage & Citation** — Provenance, consent metadata and source attribution needs
+3. **Guardrails & Security** — Common trust, verification and security constraints
+4. **Policy Enforcement** — How existing MCP primitives and surrounding systems support tool and data policies
 
 ## Repository Structure
 
