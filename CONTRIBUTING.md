@@ -9,7 +9,7 @@ Anyone can participate — no approval or membership is required. You can:
 - Join the [#financial-services-ig](https://discord.gg/6CSzBmMkjX) channel on the [MCP Discord](https://modelcontextprotocol.io/community/communication#discord)
 - Attend the bi-weekly meetings (see [Meetings](#meetings))
 - Browse and open [issues](https://github.com/modelcontextprotocol/financial-services-interest-group/issues)
-- Submit PRs for extensions, documentation, or improvements
+- Submit PRs documenting shared problems, existing implementation patterns, useful references, or improvements
 
 General contribution norms follow the [MCP Contributing Guide](https://github.com/modelcontextprotocol/.github/blob/main/CONTRIBUTING.md).
 
@@ -28,7 +28,7 @@ The FSIG meets every two weeks (16:00–17:00 London). The schedule is on the [M
 
 ## Decision-Making
 
-The FSIG is an **Interest Group**: it identifies problems, gathers requirements and makes non-binding recommendations through rough consensus. It may adopt formal procedures for internal decisions, but cannot make binding MCP specification decisions or formally sponsor SEPs. Working Groups make binding decisions within their delegated scope and may sponsor SEPs. See the [IG/WG comparison](./README.md#interest-groups-vs-working-groups), MCP [group governance](https://modelcontextprotocol.io/community/working-interest-groups), and the FSIG [charter](https://modelcontextprotocol.io/community/interest-groups/financial-services#scope).
+The FSIG is an **Interest Group**: it identifies common problems, shares existing implementation approaches and makes non-binding recommendations and referrals through rough consensus. It may adopt formal procedures for internal decisions, but cannot make binding MCP specification decisions or formally sponsor SEPs. Working Groups make binding decisions within their delegated scope and may sponsor SEPs. See the [IG/WG comparison](./README.md#interest-groups-vs-working-groups), MCP [group governance](https://modelcontextprotocol.io/community/working-interest-groups), and the FSIG [charter](https://modelcontextprotocol.io/community/interest-groups/financial-services#scope).
 
 ## Antitrust Compliance
 
@@ -38,23 +38,28 @@ All contributions and discussions must comply with the [MCP Antitrust Policy](ht
 
 **Focus on:** technical standards and specifications, implementation approaches, interoperability patterns, documentation, and testing.
 
-## Extension Development
+## Bringing a Problem to FSIG
 
-When developing MCP extensions for financial services:
+Start with a [GitHub issue](https://github.com/modelcontextprotocol/financial-services-interest-group/issues) or an agenda proposal:
 
-1. **Start with a proposal** — Open an issue describing the extension; discuss use cases and requirements before implementation.
-2. **Follow MCP standards** — Align with the [MCP specification](https://modelcontextprotocol.io/specification) and document any deviations.
-3. **Include documentation and examples** — A clear README, working examples, and implementation notes.
-4. **Consider broad applicability** — Could it benefit other domains? Document use cases beyond financial services.
+1. **Shared problem:** Who encounters it, and what evidence suggests it matters across institutions?
+2. **What works today:** Which existing MCP primitives, combinations of capabilities or publicly shareable industry patterns address it?
+3. **Remaining gap:** Is this a protocol limitation, or a documentation, discovery, integration or deployment problem?
+4. **Related work:** Which WGs or other IGs already discuss the issue, and who is interested in contributing?
 
-## Proposing Core Spec Enhancements
+The preferred output is a documented answer or a clear problem statement and referral—not automatically an extension or SEP. This approach implements the IG's problem-identification role under [MCP group governance](https://modelcontextprotocol.io/community/working-interest-groups) while remaining within the published [FSIG charter](https://modelcontextprotocol.io/community/interest-groups/financial-services).
 
-For proposed protocol changes, interoperability conventions, or extensions that require formal standardization, follow the [SEP Guidelines](https://modelcontextprotocol.io/community/sep-guidelines):
+## Routing Unresolved Problems
 
-1. **Frame the problem in FSIG** — Gather cross-industry use cases, requirements, implementation experience and feedback.
-2. **Develop the proposal** — FSIG participants may draft SEPs, prototype solutions, and experiment with extensions (including under SEP-2133). This does not confer formal SEP sponsorship.
-3. **Find a sponsoring Working Group** — Bring the proposal to the WG responsible for its scope and secure agreement through that WG's decision process. If none exists, propose forming a WG. Core Maintainer sponsorship is possible only as an exceptional alternative.
-4. **Follow formal SEP review** — A SEP may be developed as a draft PR before sponsorship, but requires sponsorship before being marked ready for review. Core Maintainers decide whether to accept it; sponsorship alone is not approval.
+- **Existing answer:** Document reusable MCP patterns, references and limitations.
+- **Existing WG:** Take the shared requirements and interested participants to the WG responsible for that area.
+- **No matching WG:** For a widely acknowledged gap with a clear potential deliverable, gather support across IGs and the wider MCP community, and help interested contributors propose a WG under the [formal formation rules](https://modelcontextprotocol.io/community/working-interest-groups#forming-a-group). Cross-IG support is useful, not mandatory; group and leadership sponsorship and a charter are still required.
+
+Exploratory technical discussion and extension experimentation are permitted by the [FSIG charter](https://modelcontextprotocol.io/community/interest-groups/financial-services), but FSIG should not duplicate WG solution ownership.
+
+### SEP participation
+
+FSIG participants can contribute requirements, evidence and draft proposals. **FSIG cannot formally sponsor a SEP.** The [SEP template](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/seps/TEMPLATE.md) specifies a sponsor acting for a WG or the Core Maintainers (or `None` while unsponsored). The [SEP Guidelines](https://modelcontextprotocol.io/community/sep-guidelines) allow an unsponsored draft PR, but require WG sponsorship or exceptional Core Maintainer sponsorship before the proposal enters the SEP process. The sponsor advances it through review; Core Maintainers decide acceptance.
 
 ## Getting Help
 
