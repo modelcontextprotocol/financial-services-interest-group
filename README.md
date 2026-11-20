@@ -11,12 +11,29 @@ The **MCP Financial Services Interest Group (FSIG)** is a collaborative communit
 
 The FSIG coordinates financial-industry stakeholders to:
 
-- **Define and build** finance-specific MCP extensions (compliance/auditability, data lineage & provenance, guardrails & attestation, etc.)
-- **Advocate for spec enhancements** when extensions aren't sufficient (via SEPs with core maintainer sponsorship)
-- **Drive common standards** enabling interoperability across regulated institutions
+- **Identify and document** finance-specific interoperability problems, use cases, requirements, and potential extensions (compliance/auditability, data lineage & provenance, guardrails & attestation, etc.)
+- **Contribute to spec enhancements** by developing proposals and collaborating with a sponsoring MCP Working Group (or, exceptionally, the Core Maintainers)
+- **Build consensus and recommend interoperable approaches** across regulated institutions
 - **Provide a neutral forum** to address regulatory and risk constraints with open technical solutions
 
 See the [charter](https://modelcontextprotocol.io/community/interest-groups/financial-services) for the full scope, leadership, membership, and current discussion topics.
+
+## Interest Groups vs Working Groups
+
+Under the [MCP Working and Interest Group governance](https://modelcontextprotocol.io/community/working-interest-groups), **Interest Groups (IGs) identify and discuss problems; Working Groups (WGs) develop concrete solutions**.
+
+| | Interest Group (FSIG) | Working Group |
+| --- | --- | --- |
+| Purpose | Identify problems, gather requirements, exchange expertise and build rough consensus | Deliver a scoped technical solution |
+| Typical outputs | Problem statements, use cases, recommendations, input to SEPs and WGs | SEPs, reference implementations, or stewardship of endorsed MCP projects |
+| Decisions | Non-binding rough consensus; an IG may adopt formal procedures for internal decisions | Binding within delegated scope, subject to escalation and Core Maintainer authority |
+| Leadership | Facilitators | Leads |
+| Duration | Ongoing while relevant | Until agreed deliverables are complete |
+| SEP sponsorship | **Cannot formally sponsor a SEP**; members may author, prototype and contribute | **Can sponsor SEPs** within the WG's scope, following its decision process |
+
+**How FSIG work becomes a SEP:** FSIG can frame the problem, gather cross-industry requirements, develop proposals and prototypes, and contribute to SEP drafts. Before formal SEP review, an existing WG must agree to sponsor the proposal. If no WG covers the topic, FSIG participants can propose forming one. The Core Maintainers may sponsor a SEP directly as an **exception**, not the default path. Formal sponsorship does not itself approve a SEP; Core Maintainers make the acceptance decision.
+
+An IG can also initiate an [experimental extension](https://blog.modelcontextprotocol.io/posts/mcp-roadmap/) under SEP-2133; experimental work is not the same as formal SEP sponsorship. See the authoritative [SEP Guidelines](https://modelcontextprotocol.io/community/sep-guidelines) for the current workflow and sponsor requirements. Group charters cannot override MCP-wide governance.
 
 ## Related Working Groups
 
