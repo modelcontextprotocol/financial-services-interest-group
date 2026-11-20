@@ -24,7 +24,7 @@ General contribution norms follow the [MCP Contributing Guide](https://github.co
 
 ## Meetings
 
-The FSIG meets every two weeks (16:00–17:00 London). The schedule is on the [MCP meetings calendar](https://meet.modelcontextprotocol.io/tag/finance). Meeting requirements — open attendance, advance agendas, and public notes — follow MCP [group governance](https://modelcontextprotocol.io/community/working-interest-groups#meeting-requirements). Each meeting opens with an [antitrust](https://modelcontextprotocol.io/community/antitrust) reminder.
+FSIG proposes a **monthly, 60-minute** structured industry forum, with a possible move to fortnightly if warranted, pending the [official charter amendment](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/3572). Check the [MCP finance calendar](https://meet.modelcontextprotocol.io/tag/finance) for the current schedule. Submit topics ahead of time: introductions and opportunities to join existing WGs, shared problems, current MCP implementation approaches, WG referrals and follow-ups. Meetings follow [MCP governance](https://modelcontextprotocol.io/community/working-interest-groups#meetings-and-channels): open attendance, publication at least seven days ahead, public agendas in GitHub Discussions, and notes within 48 hours. Each meeting follows the [antitrust policy](https://modelcontextprotocol.io/community/antitrust).
 
 ## Decision-Making
 
