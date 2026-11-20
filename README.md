@@ -63,9 +63,11 @@ Examples of existing MCP working groups and experimental work relevant to FSIG d
 
 **Proposed cadence:** Monthly, for up to 60 minutes initially. If recurring topics, participation or the volume of agenda proposals warrants it, Facilitators can reconsider the frequency. This is subject to the [official charter amendment](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/3572); consult the [MCP finance calendar](https://meet.modelcontextprotocol.io/tag/finance) for the current schedule.
 
-FSIG meetings are open, free-flowing industry discussions guided by a **lightweight agenda submitted in advance**, not fixed time slots. Recurring prompts may include introductions and ways to contribute to MCP, common financial-services problems, existing approaches with current MCP primitives, relevant WG/IG activity, and follow-ups. Anyone can propose additional topics ahead of a meeting. Facilitators help prioritize discussion and connect detailed technical work with the appropriate WG.
+FSIG meetings are open, free-flowing industry discussions. Recurring prompts include introductions, common problems, existing MCP approaches, WG/IG activity and follow-ups.
 
-Meetings follow [MCP meeting requirements](https://modelcontextprotocol.io/community/working-interest-groups#meetings-and-channels): open attendance, calendar publication at least seven days ahead, a public agenda in GitHub Discussions before the meeting, and public notes within 48 hours. See the [meeting notes](https://docs.google.com/document/d/19HwCw7i4k-omABGnRYGGuLdMJNXQc3rs_QRgJxPhQU8/edit) and [antitrust policy](https://modelcontextprotocol.io/community/antitrust).
+Facilitators invite agenda suggestions in a thread in `#financial-services-ig` ahead of each meeting, where anyone can reply with a topic or question. They consolidate these into a lightweight public agenda, without fixed time slots. In line with [MCP meeting governance](https://modelcontextprotocol.io/community/working-interest-groups#meetings-and-channels), the agenda or its link is posted in the GitHub Discussions Meeting Notes category before the meeting, and notes are published to the same discussion within 48 hours. This follows the [Security IG](https://modelcontextprotocol.io/community/interest-groups/security) and [Authorization IG](https://modelcontextprotocol.io/community/interest-groups/auth) approaches.
+
+The [MCP finance calendar](https://meet.modelcontextprotocol.io/tag/finance) is the source for scheduled meetings. Calendar publication at least seven days ahead, open attendance, and the [Code of Conduct](https://modelcontextprotocol.io/community/policies) and [Antitrust Policy](https://modelcontextprotocol.io/community/antitrust) remain applicable.
 
 ## Example Discussion Areas
 
