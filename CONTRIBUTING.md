@@ -28,7 +28,7 @@ The FSIG meets every two weeks (16:00–17:00 London). The schedule is on the [M
 
 ## Decision-Making
 
-The FSIG is an Interest Group: it facilitates discussion and knowledge-sharing rather than making binding spec decisions. The decision progression (lazy consensus → escalation) and participation tiers are defined in MCP [group governance](https://modelcontextprotocol.io/community/working-interest-groups). Group-specific scope is in the [charter](https://modelcontextprotocol.io/community/interest-groups/financial-services#scope).
+The FSIG is an **Interest Group**: it identifies problems, gathers requirements and makes non-binding recommendations through rough consensus. It may adopt formal procedures for internal decisions, but cannot make binding MCP specification decisions or formally sponsor SEPs. Working Groups make binding decisions within their delegated scope and may sponsor SEPs. See the [IG/WG comparison](./README.md#interest-groups-vs-working-groups), MCP [group governance](https://modelcontextprotocol.io/community/working-interest-groups), and the FSIG [charter](https://modelcontextprotocol.io/community/interest-groups/financial-services#scope).
 
 ## Antitrust Compliance
 
@@ -49,11 +49,12 @@ When developing MCP extensions for financial services:
 
 ## Proposing Core Spec Enhancements
 
-When an extension shows applicability beyond financial services, it becomes a candidate for promotion to the core spec via a [SEP](https://modelcontextprotocol.io/community/sep-guidelines):
+For proposed protocol changes, interoperability conventions, or extensions that require formal standardization, follow the [SEP Guidelines](https://modelcontextprotocol.io/community/sep-guidelines):
 
-1. **Gather implementation experience** — Deploy in real scenarios and collect feedback.
-2. **Discuss with the FSIG** — Present at a meeting and build consensus.
-3. **Draft a SEP** — Follow the [SEP guidelines](https://modelcontextprotocol.io/community/sep-guidelines) with core-maintainer sponsorship.
+1. **Frame the problem in FSIG** — Gather cross-industry use cases, requirements, implementation experience and feedback.
+2. **Develop the proposal** — FSIG participants may draft SEPs, prototype solutions, and experiment with extensions (including under SEP-2133). This does not confer formal SEP sponsorship.
+3. **Find a sponsoring Working Group** — Bring the proposal to the WG responsible for its scope and secure agreement through that WG's decision process. If none exists, propose forming a WG. Core Maintainer sponsorship is possible only as an exceptional alternative.
+4. **Follow formal SEP review** — A SEP may be developed as a draft PR before sponsorship, but requires sponsorship before being marked ready for review. Core Maintainers decide whether to accept it; sponsorship alone is not approval.
 
 ## Getting Help
 
