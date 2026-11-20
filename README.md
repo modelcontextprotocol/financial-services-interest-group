@@ -61,9 +61,13 @@ Examples of existing MCP working groups and experimental work relevant to FSIG d
 
 ## Meetings
 
-**Cadence:** Every two weeks · **Time:** 16:00–17:00 London (BST/GMT) · **Duration:** 60 minutes · **Format:** Virtual
+**Proposed cadence:** Monthly, 60 minutes initially, with the option to move to fortnightly if participation and agenda demand justify it. This change is subject to approval of the [official FSIG charter amendment](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/3572); consult the [MCP finance calendar](https://meet.modelcontextprotocol.io/tag/finance) for currently scheduled meetings.
 
-See the [calendar](https://meet.modelcontextprotocol.io/tag/finance) for the next meeting and the [meeting notes doc](https://docs.google.com/document/d/19HwCw7i4k-omABGnRYGGuLdMJNXQc3rs_QRgJxPhQU8/edit) for agendas. Meeting requirements — open attendance, advance agendas, and public notes — follow MCP [group governance](https://modelcontextprotocol.io/community/working-interest-groups#meeting-requirements). Each meeting opens with an [antitrust](https://modelcontextprotocol.io/community/antitrust) reminder.
+FSIG meetings are structured industry forums, not standing technical design sessions. Participants can introduce themselves, share common problems and existing MCP implementation approaches, and find relevant Working Groups and opportunities to contribute.
+
+A suggested agenda is **10 minutes introductions**, **15 minutes shared problems**, **15 minutes existing approaches**, **15 minutes WG connections**, and **5 minutes follow-ups**. Submit topics in advance so each session has a clear, limited agenda. Detailed technical solution development belongs with the relevant WG.
+
+Meetings follow [MCP meeting requirements](https://modelcontextprotocol.io/community/working-interest-groups#meetings-and-channels): open attendance, calendar publication at least seven days in advance, a public agenda in GitHub Discussions before the meeting, and public notes within 48 hours. See the [meeting notes](https://docs.google.com/document/d/19HwCw7i4k-omABGnRYGGuLdMJNXQc3rs_QRgJxPhQU8/edit) and [antitrust policy](https://modelcontextprotocol.io/community/antitrust).
 
 ## Example Discussion Areas
 
