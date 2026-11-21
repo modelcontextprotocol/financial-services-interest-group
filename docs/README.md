@@ -1,9 +1,5 @@
 # Documentation
 
-This directory will host detailed documentation, specifications, diagrams, and meeting notes.
+Use this directory to document shared financial-services use cases, existing MCP implementation approaches, and interoperability gaps. Include publicly shareable examples and identify any relevant MCP working group.
 
-Suggested sub-folders:
-- diagrams/
-- use-cases/
-
-Add or adapt as needed.
+See the [contribution guide](../CONTRIBUTING.md) for how to bring a problem to FSIG and the [meeting guide](../README.md#meetings) for agendas and notes.
