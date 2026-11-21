@@ -50,6 +50,8 @@ FSIG participants can contribute problem statements, requirements, implementatio
 
 Examples of existing MCP working groups and experimental work relevant to FSIG discussions. These are possible destinations for requirements and interested contributors, not FSIG-owned deliverables:
 
+- [Filesystems WG](https://modelcontextprotocol.io/community/working-groups/filesystems) explores how clients discover, read, and update filesystem-shaped MCP resources. One financial-services use case is finding a filing in a collection and retrieving it by URI.
+- [Core Primitives WG](https://github.com/modelcontextprotocol/core-primitives-wg) is the forum for follow-up on the [granular citations proposal](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/3094). For example, a client could use a citation to show the exact table row in a filing that supports a reported figure.
 - **Interceptors**
   - [Working group](https://modelcontextprotocol.io/community/working-groups/interceptors)
   - [experimental-ext-interceptors](https://github.com/modelcontextprotocol/experimental-ext-interceptors)
