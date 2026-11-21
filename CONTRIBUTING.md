@@ -17,15 +17,15 @@ General contribution norms follow the [MCP Contributing Guide](https://github.co
 
 | Channel | Purpose |
 | :--- | :--- |
-| [Discord #financial-services-ig](https://discord.gg/6CSzBmMkjX) | Quick questions, coordination, async discussion |
+| [Discord #financial-services-ig](https://discord.gg/6CSzBmMkjX) | Suggest agenda topics and ask questions |
 | [GitHub Issues](https://github.com/modelcontextprotocol/financial-services-interest-group/issues) | Proposals, bugs, and structured discussions |
-| [Meeting notes](https://docs.google.com/document/d/19HwCw7i4k-omABGnRYGGuLdMJNXQc3rs_QRgJxPhQU8/edit) | Agendas, decisions, and action items |
+| [MCP GitHub Discussions · Meeting Notes - Other](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/categories/meeting-notes-other) | Read the agenda before the meeting and find the notes in the same thread afterward |
 
 ## Meetings
 
 FSIG meets monthly for up to 60 minutes. See the [MCP finance calendar](https://meet.modelcontextprotocol.io/tag/finance) for upcoming meetings.
 
-Suggest topics in the [FSIG Discord channel](https://discord.gg/6CSzBmMkjX) before each call. Facilitators maintain the [FSIG agenda and meeting notes](https://docs.google.com/document/d/19HwCw7i4k-omABGnRYGGuLdMJNXQc3rs_QRgJxPhQU8/edit). The [charter](https://modelcontextprotocol.io/community/interest-groups/financial-services#operations) calls for facilitators to post the agenda or a link in MCP GitHub Discussions before the meeting and publish notes in the same discussion within 48 hours.
+To suggest a topic, reply to the facilitators’ pre-meeting thread in [#financial-services-ig](https://discord.gg/6CSzBmMkjX). Find the agenda in [MCP GitHub Discussions · Meeting Notes - Other](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/categories/meeting-notes-other) before the meeting. Facilitators publish notes in the same discussion within 48 hours after the call.
 
 ## Decision-Making
 

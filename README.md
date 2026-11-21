@@ -4,7 +4,7 @@ The **MCP Financial Services Interest Group (FSIG)** is a forum for financial-se
 
 - **Charter:** [modelcontextprotocol.io/community/interest-groups/financial-services](https://modelcontextprotocol.io/community/interest-groups/financial-services) — mission, scope, leadership, membership, operations, and discussion topics.
 - **Calendar:** [MCP Meetings — Finance](https://meet.modelcontextprotocol.io/tag/finance)
-- **Meeting notes & agendas:** [FSIG Meeting Notes](https://docs.google.com/document/d/19HwCw7i4k-omABGnRYGGuLdMJNXQc3rs_QRgJxPhQU8/edit)
+- Find agendas and meeting notes in [MCP GitHub Discussions · Meeting Notes - Other](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/categories/meeting-notes-other).
 - **Discord:** [#financial-services-ig](https://discord.gg/6CSzBmMkjX)
 
 ## Mission
@@ -65,7 +65,7 @@ FSIG meets monthly for up to 60 minutes. Facilitators may revisit the cadence as
 
 FSIG meetings are open, free-flowing industry discussions. Recurring prompts include introductions, common problems, existing MCP approaches, WG/IG activity and follow-ups.
 
-Suggest topics in the [FSIG Discord channel](https://discord.gg/6CSzBmMkjX) before each call. Facilitators maintain the [FSIG agenda and meeting notes](https://docs.google.com/document/d/19HwCw7i4k-omABGnRYGGuLdMJNXQc3rs_QRgJxPhQU8/edit). The [charter](https://modelcontextprotocol.io/community/interest-groups/financial-services#operations) calls for facilitators to post the agenda or a link in MCP GitHub Discussions before the meeting and publish notes in the same discussion within 48 hours.
+Before each meeting, facilitators invite topic suggestions in [#financial-services-ig](https://discord.gg/6CSzBmMkjX). Anyone can reply with a question or use case. Facilitators then post the agenda or a link to it in [MCP GitHub Discussions · Meeting Notes - Other](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/categories/meeting-notes-other). Within 48 hours after the meeting, they publish the notes in that same discussion.
 
 The [MCP finance calendar](https://meet.modelcontextprotocol.io/tag/finance) is the source for scheduled meetings. Meetings are open to everyone and appear on the calendar at least seven days in advance. The [Code of Conduct](https://modelcontextprotocol.io/community/policies) and [Antitrust Policy](https://modelcontextprotocol.io/community/antitrust) apply.
 
