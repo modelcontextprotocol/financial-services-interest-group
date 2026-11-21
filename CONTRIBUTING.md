@@ -7,7 +7,7 @@ Thank you for your interest in contributing to the MCP Financial Services Intere
 Anyone can participate — no approval or membership is required. You can:
 
 - Join the [#financial-services-ig](https://discord.gg/6CSzBmMkjX) channel on the [MCP Discord](https://modelcontextprotocol.io/community/communication#discord)
-- Attend the bi-weekly meetings (see [Meetings](#meetings))
+- Attend the monthly meetings (see [Meetings](#meetings))
 - Browse and open [issues](https://github.com/modelcontextprotocol/financial-services-interest-group/issues)
 - Submit PRs documenting shared problems, existing implementation patterns, useful references, or improvements
 
@@ -19,14 +19,13 @@ General contribution norms follow the [MCP Contributing Guide](https://github.co
 | :--- | :--- |
 | [Discord #financial-services-ig](https://discord.gg/6CSzBmMkjX) | Quick questions, coordination, async discussion |
 | [GitHub Issues](https://github.com/modelcontextprotocol/financial-services-interest-group/issues) | Proposals, bugs, and structured discussions |
-| GitHub Discussions | Longer-form conversations |
 | [Meeting notes](https://docs.google.com/document/d/19HwCw7i4k-omABGnRYGGuLdMJNXQc3rs_QRgJxPhQU8/edit) | Agendas, decisions, and action items |
 
 ## Meetings
 
-FSIG proposes a **monthly, up-to-60-minute** open industry forum, pending the [official charter amendment](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/3572). Check the [MCP finance calendar](https://meet.modelcontextprotocol.io/tag/finance) for the current schedule. Recurring discussion prompts include introductions, shared problems, existing MCP approaches, WG/IG connections and follow-ups. The cadence can be revisited as demand grows.
+FSIG meets monthly for up to 60 minutes. See the [MCP finance calendar](https://meet.modelcontextprotocol.io/tag/finance) for upcoming meetings.
 
-Facilitators invite agenda suggestions in a thread in `#financial-services-ig` ahead of each meeting, where anyone can reply with a topic or question. They consolidate these into a lightweight public agenda, without fixed time slots. In line with [MCP meeting governance](https://modelcontextprotocol.io/community/working-interest-groups#meetings-and-channels), the agenda or its link is posted in the GitHub Discussions Meeting Notes category before the meeting, and notes are published to the same discussion within 48 hours. This follows the [Security IG](https://modelcontextprotocol.io/community/interest-groups/security) and [Authorization IG](https://modelcontextprotocol.io/community/interest-groups/auth) approaches.
+Suggest topics in the [FSIG Discord channel](https://discord.gg/6CSzBmMkjX) before each call. Facilitators maintain the [FSIG agenda and meeting notes](https://docs.google.com/document/d/19HwCw7i4k-omABGnRYGGuLdMJNXQc3rs_QRgJxPhQU8/edit). The [charter](https://modelcontextprotocol.io/community/interest-groups/financial-services#operations) calls for facilitators to post the agenda or a link in MCP GitHub Discussions before the meeting and publish notes in the same discussion within 48 hours.
 
 ## Decision-Making
 
@@ -57,7 +56,7 @@ The preferred output is a documented answer or a clear problem statement and ref
 - **Existing WG:** Take the shared requirements and interested participants to the WG responsible for that area.
 - **No matching WG:** For a widely acknowledged gap with a clear potential deliverable, gather support across IGs and the wider MCP community, and help interested contributors propose a WG under the [formal formation rules](https://modelcontextprotocol.io/community/working-interest-groups#forming-a-group). Cross-IG support is useful, not mandatory; group and leadership sponsorship and a charter are still required.
 
-Exploratory technical discussion and extension experimentation are permitted by the [FSIG charter](https://modelcontextprotocol.io/community/interest-groups/financial-services), but FSIG should not duplicate WG solution ownership.
+FSIG participants can discuss possible solutions and collaborate with relevant WGs on prototypes, including exploratory finance-specific extensions. See the [charter](https://modelcontextprotocol.io/community/interest-groups/financial-services#scope).
 
 ### SEP participation
 

@@ -2,10 +2,10 @@
 
 The **MCP Financial Services Interest Group (FSIG)** is a forum for financial-services participants to identify shared problems, exchange implementation experience, and connect those problems to existing [Model Context Protocol (MCP)](https://modelcontextprotocol.io) capabilities and community work. Its default output is a clearer problem statement or a useful referral—not a new protocol feature.
 
-**Charter:** [modelcontextprotocol.io/community/interest-groups/financial-services](https://modelcontextprotocol.io/community/interest-groups/financial-services) — mission, scope, leadership, membership, operations, and discussion topics.
-**Calendar:** [MCP Meetings — Finance](https://meet.modelcontextprotocol.io/tag/finance)
-**Meeting notes & agendas:** [FSIG Meeting Notes](https://docs.google.com/document/d/19HwCw7i4k-omABGnRYGGuLdMJNXQc3rs_QRgJxPhQU8/edit)
-**Discord:** [#financial-services-ig](https://discord.gg/6CSzBmMkjX)
+- **Charter:** [modelcontextprotocol.io/community/interest-groups/financial-services](https://modelcontextprotocol.io/community/interest-groups/financial-services) — mission, scope, leadership, membership, operations, and discussion topics.
+- **Calendar:** [MCP Meetings — Finance](https://meet.modelcontextprotocol.io/tag/finance)
+- **Meeting notes & agendas:** [FSIG Meeting Notes](https://docs.google.com/document/d/19HwCw7i4k-omABGnRYGGuLdMJNXQc3rs_QRgJxPhQU8/edit)
+- **Discord:** [#financial-services-ig](https://discord.gg/6CSzBmMkjX)
 
 ## Mission
 
@@ -16,7 +16,7 @@ The FSIG brings financial-industry stakeholders together to:
 - **Connect to existing work:** Refer unresolved protocol gaps and interested participants to an existing MCP Working Group (WG), rather than duplicating its work.
 - **Build a case for new work when warranted:** For a substantial, well-evidenced gap with no relevant WG, gather interest across IGs and the wider community and help contributors propose a new WG through the established process.
 
-This is FSIG's preferred operating model, not a prohibition on exploratory technical work. The [MCP group governance](https://modelcontextprotocol.io/community/working-interest-groups) defines IG outputs as problem statements, use cases, recommendations and input to WGs and SEPs; the [FSIG charter](https://modelcontextprotocol.io/community/interest-groups/financial-services) also permits extension development, which remains subject to the broader MCP governance and is not the default response to a problem.
+FSIG can discuss possible solutions and collaborate with relevant WGs on prototypes, including exploratory finance-specific extensions.
 
 See the [charter](https://modelcontextprotocol.io/community/interest-groups/financial-services) for the full scope, leadership, membership, and current discussion topics.
 
@@ -61,22 +61,23 @@ Examples of existing MCP working groups and experimental work relevant to FSIG d
 
 ## Meetings
 
-**Proposed cadence:** Monthly, for up to 60 minutes initially. If recurring topics, participation or the volume of agenda proposals warrants it, Facilitators can reconsider the frequency. This is subject to the [official charter amendment](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/3572); consult the [MCP finance calendar](https://meet.modelcontextprotocol.io/tag/finance) for the current schedule.
+FSIG meets monthly for up to 60 minutes. Facilitators may revisit the cadence as interest and agenda volume change.
 
 FSIG meetings are open, free-flowing industry discussions. Recurring prompts include introductions, common problems, existing MCP approaches, WG/IG activity and follow-ups.
 
-Facilitators invite agenda suggestions in a thread in `#financial-services-ig` ahead of each meeting, where anyone can reply with a topic or question. They consolidate these into a lightweight public agenda, without fixed time slots. In line with [MCP meeting governance](https://modelcontextprotocol.io/community/working-interest-groups#meetings-and-channels), the agenda or its link is posted in the GitHub Discussions Meeting Notes category before the meeting, and notes are published to the same discussion within 48 hours. This follows the [Security IG](https://modelcontextprotocol.io/community/interest-groups/security) and [Authorization IG](https://modelcontextprotocol.io/community/interest-groups/auth) approaches.
+Suggest topics in the [FSIG Discord channel](https://discord.gg/6CSzBmMkjX) before each call. Facilitators maintain the [FSIG agenda and meeting notes](https://docs.google.com/document/d/19HwCw7i4k-omABGnRYGGuLdMJNXQc3rs_QRgJxPhQU8/edit). The [charter](https://modelcontextprotocol.io/community/interest-groups/financial-services#operations) calls for facilitators to post the agenda or a link in MCP GitHub Discussions before the meeting and publish notes in the same discussion within 48 hours.
 
-The [MCP finance calendar](https://meet.modelcontextprotocol.io/tag/finance) is the source for scheduled meetings. Calendar publication at least seven days ahead, open attendance, and the [Code of Conduct](https://modelcontextprotocol.io/community/policies) and [Antitrust Policy](https://modelcontextprotocol.io/community/antitrust) remain applicable.
+The [MCP finance calendar](https://meet.modelcontextprotocol.io/tag/finance) is the source for scheduled meetings. Meetings are open to everyone and appear on the calendar at least seven days in advance. The [Code of Conduct](https://modelcontextprotocol.io/community/policies) and [Antitrust Policy](https://modelcontextprotocol.io/community/antitrust) apply.
 
 ## Example Discussion Areas
 
-These are areas for identifying shared problems and existing approaches, not commitments to design new extensions:
+These questions illustrate topics participants can bring to FSIG.
 
-1. **Regulatory Audit & Attestation** — Audit requirements and current approaches to recording and verifying activity
-2. **Data Lineage & Citation** — Provenance, consent metadata and source attribution needs
-3. **Guardrails & Security** — Common trust, verification and security constraints
-4. **Policy Enforcement** — How existing MCP primitives and surrounding systems support tool and data policies
+| Topic                                    | Illustrative discussion question                                                                                             |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| **Auditability and operational control** | If a connection drops after an order is submitted, what can the client establish about the outcome?                          |
+| **Data lineage and citation**            | Can a reader trace a reported figure to the filing and reporting period it came from?                                        |
+| **Data handling**                        | When a result combines licensed market data with a public filing, can the client tell which data the restriction applies to? |
 
 ## Repository Structure
 
@@ -84,7 +85,7 @@ These are areas for identifying shared problems and existing approaches, not com
 /
 ├── README.md         # This file
 ├── CONTRIBUTING.md   # How to contribute
-├── extensions/       # MCP extension specifications and examples
+├── extensions/       # Exploratory extension proposals and prototypes
 └── docs/             # Guides, whitepapers, and documentation
 ```
 
@@ -93,7 +94,7 @@ These are areas for identifying shared problems and existing approaches, not com
 Anyone can participate — no approval or membership is required:
 
 - **Join** the [#financial-services-ig](https://discord.gg/6CSzBmMkjX) channel on the [MCP Discord](https://modelcontextprotocol.io/community/communication#discord)
-- **Attend** the bi-weekly meetings
+- **Attend** the [monthly meetings](#meetings)
 - **Contribute** by opening issues, submitting PRs, or providing feedback — see [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 Leadership and membership are listed in the [charter](https://modelcontextprotocol.io/community/interest-groups/financial-services#membership).

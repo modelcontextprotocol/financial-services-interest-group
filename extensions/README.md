@@ -1,10 +1,5 @@
-# Extensions
+# Exploratory extensions
 
-This directory will contain extension proposals, reference implementations, and related resources.
+FSIG participants can use this directory to explore finance-specific extensions with relevant MCP working groups. For each proposal or prototype, describe the shared problem, what existing MCP capabilities cover, and which requirement the experiment helps clarify.
 
-Structure suggestion:
-- proposals/
-- implementations/
-- archived/
-
-(You can adjust as the working group formalizes the layout.)
+See the [contribution guide](../CONTRIBUTING.md#routing-unresolved-problems) for how to take the findings to a working group.
