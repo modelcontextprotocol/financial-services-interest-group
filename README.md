@@ -22,9 +22,9 @@ See the [charter](https://modelcontextprotocol.io/community/interest-groups/fina
 
 ## Interest Groups vs Working Groups
 
-The authoritative [MCP Working Groups and Interest Groups governance](https://modelcontextprotocol.io/community/working-interest-groups) (adopted through [SEP-2149](https://modelcontextprotocol.io/seps/2149)) distinguishes **IGs that identify and discuss problems** from **WGs that build scoped solutions**.
+The authoritative [MCP Working Groups and Interest Groups governance](https://modelcontextprotocol.io/community/working-interest-groups) (adopted through [SEP-2149](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2149)) distinguishes **IGs that identify and discuss problems** from **WGs that build scoped solutions**.
 
-| | Interest Group (FSIG) | Working Group |
+| Responsibility | Interest Group (FSIG) | Working Group |
 | --- | --- | --- |
 | Primary purpose | Identify and discuss common problems, exchange expertise, and route requirements | Build a concrete solution |
 | Typical outputs | Problem statements, use cases, recommendations, input to WGs and SEPs | SEPs, reference implementations, or stewardship of endorsed projects |
@@ -46,7 +46,7 @@ This progression reflects the [governance document's usual IG-to-WG path](https:
 
 FSIG participants can contribute problem statements, requirements, implementation evidence and draft proposals, but the IG itself does not sponsor SEPs. The [official SEP template](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/seps/TEMPLATE.md) requires the sponsor to be named on behalf of a WG or the Core Maintainers, or to be `None` until sponsorship is secured. Under the [SEP Guidelines](https://modelcontextprotocol.io/community/sep-guidelines#sponsors), a proposal may be developed as an unsponsored draft PR, but cannot enter the formal SEP process until a WG agrees to sponsor it or, exceptionally, the Core Maintainers do. Sponsorship is not approval.
 
-## Related Working Groups
+## Related Working Groups and Experimental Extensions
 
 Examples of existing MCP working groups and experimental work relevant to FSIG discussions. These are possible destinations for requirements and interested contributors, not FSIG-owned deliverables:
 
@@ -67,7 +67,7 @@ FSIG meetings are open, free-flowing industry discussions. Recurring prompts inc
 
 Before each meeting, facilitators invite topic suggestions in [#financial-services-ig](https://discord.gg/6CSzBmMkjX). Anyone can reply with a question or use case. Facilitators then post the agenda or a link to it in [MCP GitHub Discussions · Meeting Notes - Other](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/categories/meeting-notes-other). Within 48 hours after the meeting, they publish the notes in that same discussion.
 
-The [MCP finance calendar](https://meet.modelcontextprotocol.io/tag/finance) is the source for scheduled meetings. Meetings are open to everyone and appear on the calendar at least seven days in advance. The [Code of Conduct](https://modelcontextprotocol.io/community/policies) and [Antitrust Policy](https://modelcontextprotocol.io/community/antitrust) apply.
+The [MCP finance calendar](https://meet.modelcontextprotocol.io/tag/finance) is the source for scheduled meetings. Meetings are open to everyone and appear on the calendar at least seven days in advance. The [Code of Conduct](https://github.com/modelcontextprotocol/.github/blob/main/CODE_OF_CONDUCT.md) and [Antitrust Policy](https://modelcontextprotocol.io/community/antitrust) apply.
 
 ## Example Discussion Areas
 
@@ -86,7 +86,7 @@ These questions illustrate topics participants can bring to FSIG.
 ├── README.md         # This file
 ├── CONTRIBUTING.md   # How to contribute
 ├── extensions/       # Exploratory extension proposals and prototypes
-└── docs/             # Guides, whitepapers, and documentation
+└── docs/             # Shared use cases, implementation approaches, and gaps
 ```
 
 ## How to Participate
@@ -97,7 +97,7 @@ Anyone can participate — no approval or membership is required:
 - **Attend** the [monthly meetings](#meetings)
 - **Contribute** by opening issues, submitting PRs, or providing feedback — see [CONTRIBUTING.md](./CONTRIBUTING.md)
 
-Leadership and membership are listed in the [charter](https://modelcontextprotocol.io/community/interest-groups/financial-services#membership).
+The charter lists the [facilitators](https://modelcontextprotocol.io/community/interest-groups/financial-services#leadership) and [participants](https://modelcontextprotocol.io/community/interest-groups/financial-services#membership).
 
 ## Contributing
 
