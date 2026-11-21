@@ -85,7 +85,7 @@ These questions illustrate topics participants can bring to FSIG.
 /
 ├── README.md         # This file
 ├── CONTRIBUTING.md   # How to contribute
-├── extensions/       # Exploratory extension proposals and prototypes
+├── extensions/       # Approved experiments linked to triaged issues
 └── docs/             # Shared use cases, implementation approaches, and gaps
 ```
 
@@ -95,7 +95,7 @@ Anyone can participate — no approval or membership is required:
 
 - **Join** the [#financial-services-ig](https://discord.gg/6CSzBmMkjX) channel on the [MCP Discord](https://modelcontextprotocol.io/community/communication#discord)
 - **Attend** the [monthly meetings](#meetings)
-- **Contribute** by opening issues, submitting PRs, or providing feedback — see [CONTRIBUTING.md](./CONTRIBUTING.md)
+- **Start with an [issue](https://github.com/modelcontextprotocol/financial-services-interest-group/issues)** describing the problem. Ask in Discord if you need feedback or help finding the right group. See [how FSIG triages issues before a PR](./CONTRIBUTING.md#opening-a-pull-request).
 
 The charter lists the [facilitators](https://modelcontextprotocol.io/community/interest-groups/financial-services#leadership) and [participants](https://modelcontextprotocol.io/community/interest-groups/financial-services#membership).
 

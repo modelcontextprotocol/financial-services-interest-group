@@ -1,0 +1,50 @@
+# Adapted from the Python SDK issue-first workflow. Evaluate metadata only.
+name: Require Linked Issue
+
+on:
+  pull_request_target: # zizmor: ignore[dangerous-triggers] checks out the default branch only and never runs PR code — see header
+    types: [opened, edited, reopened, ready_for_review, labeled, unlabeled]
+  issues:
+    types: [assigned, unassigned, closed, reopened]
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: PR number to evaluate
+        required: true
+        type: number
+
+permissions: {}
+
+jobs:
+  gate:
+    name: Evaluate
+    if: >-
+      github.event_name != 'pull_request_target' ||
+      (github.event.action != 'labeled' && github.event.action != 'unlabeled') ||
+      github.event.label.name == 'bypass-issue-check'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    concurrency:
+      group: require-linked-issue-${{ github.event.pull_request.number || inputs.pr_number || format('issue-{0}-{1}', github.event.issue.number, github.event.action) }}
+      cancel-in-progress: false
+    permissions:
+      contents: read # check out the gate script from the default branch
+      issues: write # read linked issues; label and comment on the PR
+      pull-requests: write # close and reopen the PR
+    env:
+      ENFORCE: ${{ vars.PR_GATE_ENFORCE != 'false' && 'true' || 'false' }} # kill switch: set the variable to "false" to go log-only
+      PR_NUMBER_INPUT: ${{ inputs.pr_number }}
+    steps:
+      - name: Check out the gate script (default branch)
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: refs/heads/${{ github.event.repository.default_branch }}
+          persist-credentials: false
+          sparse-checkout: .github/scripts
+
+      - name: Evaluate
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        with:
+          script: |
+            const run = require('./.github/scripts/pr_intake_gate.js');
+            await run({ github, context, core });

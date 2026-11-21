@@ -1,5 +1,7 @@
-# Documentation
+# Documenting a financial-services use case
 
-Use this directory to document shared financial-services use cases, existing MCP implementation approaches, and interoperability gaps. Include publicly shareable examples and identify any relevant MCP working group.
+Start with a [problem issue](../CONTRIBUTING.md#bringing-a-problem-to-fsig). Describe who encounters the problem, which MCP interaction is involved, what existing primitives can do, and what remains difficult. For example, if a client loses a citation when displaying a figure from a filing, show where the filing and reporting period were available and where they disappeared. Explain what another implementer could learn from the example.
 
-See the [contribution guide](../CONTRIBUTING.md) for how to bring a problem to FSIG and the [meeting guide](../README.md#meetings) for agendas and notes.
+Keep the account understandable on its own. Include an external link only when readers need it to verify a specific claim or inspect an illustrative example. Explain what to look for there. Product listings, promotional demos, and links offered solely to showcase a project are outside the scope of this directory.
+
+After triage, follow the [PR process](../CONTRIBUTING.md#opening-a-pull-request) for any agreed write-up.
